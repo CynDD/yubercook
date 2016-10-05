@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Emanuel Chalela
- * Date: 24/9/2016
- * Time: 12:46
- */
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

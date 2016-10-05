@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yubercook | Home</title>
-
+	<?php include 'styles.php';?>
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
@@ -22,8 +22,7 @@
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
 
-    <!-- Main style sheet -->
-    <link href="style.css" rel="stylesheet">
+  
 </html>
 
 
@@ -34,13 +33,7 @@
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
 
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+ 
   </head>
   <body>
   
@@ -51,8 +44,7 @@
       <span>Top</span>
     </a>
   <!-- END SCROLL TOP BUTTON -->
-
-  <!-- Start header section -->
+  
   <header id="mu-header">
     <nav class="navbar navbar-default mu-main-navbar" role="navigation">
       <div class="container">
@@ -69,10 +61,10 @@
         </div>
        <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-            <li><a href="index.html">VOLVER</a></li>
-            <!-- <li><a href="#mu-about-us">NOSOTROS</a></li>
-            <li><a href="#mu-restaurant-menu">MENU</a></li>
-            <li><a href="#mu-reservation">COMIDAS CERCA DE TI</a></li>
+            
+          <li><a href="MenuCocinero.php">Registro Cocinero</a></li>
+             <li><a href="MenuComensal.php">Registo Comensal</a></li>
+            <!--  <li><a href="#mu-reservation">COMIDAS CERCA DE TI</a></li>
             <li><a href="#mu-gallery">GALERÍA</a></li>
             <li><a href="#mu-login">INGRESAR</a></li>
             <li><a href="#mu-register">REGISTRARSE</a></li>
@@ -92,52 +84,62 @@
       </div>
     </nav>
   </header>
-<body>
-	
-  <?php 
-         $nombre = $_POST["nombre"];
-		 $apellido = $_POST["apellido"];
-		 $inputEmail = $_POST["inputEmail"];
-		 $inputPassword = $_POST["inputPassword"];
-		 $confirmaPassword = $_POST["confirmaPassword"];
-		 $telefono = $_POST["telefono"];		 
-		 for ($i=0;$i<count($_POST['idiomas']);$i++) {
+  
 
-		  echo "<p>".$_POST['idiomas'][$i]."</p>";		  
-
-		} 
-		 $genero = $_POST["genero"];
-		 $especialidad = $_POST["especialidad"];
-		
-		 
-		 include'conexion.php';
-		 //Inserta un nuevo registro en tabla usuario, con los datos del nuevo cocinero
-		 echo $inputPassword;
-		 echo $confirmaPassword;
-		 if($inputPassword==$confirmaPassword){
-			 $sqlregusu ="INSERT INTO usuario (nombre,apellido,fnacimiento,usuario,password,idrol,imagen,telefono,genero,especialidades)
-						VALUES ('".$nombre."','".$apellido."',null,'".$inputEmail."','".$inputPassword."',1,null,".$telefono.",'".$genero."','".$especialidad."')";
-			 
-			 //echo $sqlregusu;		 
-			 $result = mysql_query($sqlregusu,$conex);
-			 //Extraigo el idusuario del nuevo cocinero para guardar en la tabla idiomausuario los idiomas que conoce el cocinero
-			$sqlusu = "SELECT idusuario FROM usuario where usuario='".$inputEmail."'";	
-			$result2 = mysql_query($sqlusu,$conex);		
-			$reg1 = mysql_fetch_array($result2); 
-			
-			echo $reg1['idusuario'];
-			
-			//Almaceno en tabla idiomausuario los idiomas que conoce el cocinero
-			for ($i=0;$i<count($_POST['idiomas']);$i++) {
-				echo $reg1['idusuario']."id de idioma".$_POST['idiomas'][$i]; 
-				$sqlidiomausu ="INSERT INTO idiomausuario (idusuario,idioma)
-						VALUES (".$reg1['idusuario'].",".$_POST['idiomas'][$i].")";
-				$result = mysql_query($sqlidiomausu,$conex);
-				include'conexion.php';
-			}
-		}
-        
-    ?>    
+<!--	<div align="center" class="embed-responsive embed-responsive-16by9">
+		<img id="imagen" src="assets/img/imagenLogin.jpg" type="imagen">
+        </img> 
+	</div>
 	
+	
+	
+	 <
+	   
+		<div align="center" class="imagen">
+		<img id="imagen" src="chefs.jpg" type="imagen">
+        </img> 
+	</div>!-->
+ <body >
+ <section id="mu-registro">	
+ <div id="formulario" style = "padding-left:15px";>
+	<div class="mu-registro-area">
+           <div class="mu-title">
+				
+               <span class="mu-subtitle">Login</span>
+                    <br/>
+                    <i class="fa fa-spoon"></i>
+                    <span class="mu-title-bar"></span>
+             </div>
+ 
+	<div class="mu-registro-content">
+		<form class="mu-registro-form">
+		<div class="form-group">
+        <label class="control-label col-md-3" style="color: white">Email:</label>
+        <div class="col-md-8">
+            <input type="email" class="form-control" id="inputEmail" name ="inputEmail" placeholder="Email">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-md-3" style="color: white">Contraseña:</label>
+        <div class="col-md-8">
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Contraseña">
+        </div>
+    </div>
+	<div class="form-group">
+        <div class="col-md-offset-2 col-md-9" align="right">
+			<!--<input type="reset" class="btn btn-default" value="Limpiar">-->
+			<button type="submit" class="mu-readmore-btn">Iniciar Sesión</button>
+            
+            
+        </div>
+	 
+	  </div>
+   
+    </div>
+	 </div>
+	</form>
+   </div>
+    
+</section>
 </body>
 </html>

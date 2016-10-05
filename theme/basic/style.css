@@ -36,7 +36,10 @@ body {
   color: #333333;
   font-size: 15px;
   overflow-x: hidden;
+  
 }
+
+
 
 .no-padding {
   padding: 0;
@@ -54,6 +57,9 @@ a {
   color: #333333;
 }
 
+
+
+
 a:hover,
 a:focus {
   outline: none;
@@ -63,6 +69,7 @@ a:focus {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
 }
+
 
 h2 {
   font-size: 30px;
@@ -162,6 +169,10 @@ img {
   color: #fff;
 }
 
+#fondo{
+	background: url(chefs.jpg) center center cover no-repeat fixed;
+	
+}
 /* LAYOUTS - Page layout styles */
 /*==================
  HEADER SECTION
@@ -656,6 +667,113 @@ img {
 #mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-tab-content-area .mu-menu-item-nav li .media .media-body p {
   margin-top: 10px;
   font-size: 14px;
+}
+
+/*==================
+Register SECTION
+====================*/
+#mu-registro{
+  background-color: #222;
+  display: inline;
+  float: left;
+  padding: 100px 0;
+  width: 100%;
+}
+#mu-registro .mu-registro-area {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+#mu-registro .mu-registro-area .mu-title h2 {
+  color: #fff;
+}
+#mu-registro .mu-registro-area .mu-registro-content {
+  display: inline;
+  float: left;
+  margin-top: 20px;
+  padding: 0 100px;
+  width: 100%;
+}
+#mu-registro .mu-registro-area .mu-registro-content h3 {
+  color: #fff;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+#mu-registro .mu-registro-area .mu-registro-content p {
+  color: #white;
+  letter-spacing: 0.5px;
+  padding: 0 50px;
+  text-align: center;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form {
+  margin-top: 30px;
+  text-align: center;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form .form-control {
+  margin-bottom: 20px;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"],
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"] {
+  border-radius: 0;
+  color: #000;
+  height: 40px;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"]:focus,
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"]:focus {
+  box-shadow: none;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"]::-webkit-input-placeholder,
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"]::-webkit-input-placeholder {
+  color: #555;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"]:-moz-placeholder,
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"]:-moz-placeholder {
+  color: #555;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"]::-moz-placeholder,
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"]::-moz-placeholder {
+  color: #555;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="text"]:-ms-input-placeholder,
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form input[type="email"]:-ms-input-placeholder {
+  color: #555;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form select {
+  border-radius: 0;
+  height: 40px;
+}
+#mu-registro .mu-registro-area .mu-registro-content .mu-registro-form select:focus {
+  box-shadow: none;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form select option {
+  margin-bottom: 10px;
+  color: #000;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea {
+  border-radius: 0;
+  color: #000;
+  padding: 10px;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea:focus {
+  box-shadow: none;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea::-webkit-input-placeholder {
+  color: #555;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea:-moz-placeholder {
+  color: #555;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea::-moz-placeholder {
+  color: #555;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form textarea:-ms-input-placeholder {
+  color: #555;
+}
+#mu-registro.mu-registro-area .mu-registro-content .mu-registro-form button[type="submit"] {
+  border: none;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 
 /*==================
@@ -1980,6 +2098,7 @@ RESERVATION SECTION
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 #mu-footer .mu-footer-area .mu-footer-copyright {
   display: inline;
   float: left;
@@ -2156,7 +2275,10 @@ RESERVATION SECTION
     font-size: 18px;
   }
 
-  #mu-reservation .mu-reservation-area .mu-reservation-content {
+  #mu-registo .mu-registro-area .mu-registro-content {
+    padding: 0 50px;
+  }
+   #mu-reservation .mu-reservation-area .mu-reservation-content {
     padding: 0 50px;
   }
 
@@ -2166,6 +2288,9 @@ RESERVATION SECTION
   }
 
   #mu-reservation .mu-reservation-area .mu-reservation-content p {
+    padding: 0;
+  }
+  #mu-registro .mu-registo-area .mu-registro-content p {
     padding: 0;
   }
 
@@ -2320,6 +2445,9 @@ RESERVATION SECTION
   }
 
   #mu-reservation .mu-reservation-area .mu-reservation-content {
+    padding: 0;
+  }
+  #mu-registro .mu-registro-area .mu-registro-content {
     padding: 0;
   }
 

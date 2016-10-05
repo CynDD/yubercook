@@ -13,7 +13,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-                    <li><a href="register.php">Registrarse</a></li>
+                    <li><a href="MenuCocinero.php">Registrarse</a></li>
                     <li><a href="login.php">Iniciar sesión</a></li>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="#mu-about-us">Nosotros</a></li>
