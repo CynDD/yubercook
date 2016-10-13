@@ -7,7 +7,7 @@
     <title>Yubercook | Home</title>
     <?php include 'styles.php';?>
 </html>
-
+ </head>
 
 <!--START SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#">
@@ -79,44 +79,44 @@
 	<div class="mu-registro-content">
 		<form class="mu-registro-form">
 			<div class="form-group">
-				<label class="control-label col-md-3 ">Nombre:</label>
+				<label class="control-label col-md-3" style="color: white">Nombre:</label>
 			<div class="col-md-8">
 				<input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre">
 			</div>
 			</div>
     <div class="form-group">
-        <label class="control-label col-md-3">Apellido:</label>
+        <label class="control-label col-md-3" style="color: white" >Apellido:</label>
         <div class="col-md-8">
             <input type="text" class="form-control" id="apellido" name ="apellido" placeholder="Apellido">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-3">Email:</label>
+        <label class="control-label col-md-3" style="color: white">Email:</label>
         <div class="col-md-8">
             <input type="email" class="form-control" id="inputEmail" name ="inputEmail" placeholder="Email">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-3">Password:</label>
+        <label class="control-label col-md-3" style="color: white">Password:</label>
         <div class="col-md-8">
             <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-3">Confirmar Password:</label>
+        <label class="control-label col-md-3" style="color: white">Confirmar Password:</label>
         <div class="col-md-8">
             <input type="password" class="form-control" id="confirmaPassword" name ="confirmaPassword"  placeholder="Confirmar Password">
         </div>
     </div>
     
     <div class="form-group">
-        <label class="control-label col-md-3" >Telefono:</label>
+        <label class="control-label col-md-3" style="color: white" >Telefono:</label>
         <div class="col-md-8">
             <input type="tel" class="form-control" id="telefono" name ="telefono" placeholder="Telefono">
         </div>
     </div>
 	<div class="form-group">
-       <label class="control-label col-md-3">Idiomas:</label>
+       <label class="control-label col-md-3" style="color: white" >Idiomas:</label>
        <div class="col-md-8">
 		<select  name="idiomas[]"  multiple class="form-control">
 			<option value="1">1</option>
@@ -128,7 +128,7 @@
 	</div>
    </div>
     <div class="form-group">
-        <label class="control-label col-md-3">F. Nac:</label>
+        <label class="control-label col-md-3" style="color: white">F. Nac:</label>
         <div class="col-md-2">
             <select class="form-control">
                 <option>Dia</option>
@@ -147,15 +147,15 @@
     </div>
 	
 	<div class="form-group">
-        <label class="control-label col-md-3" >Género:</label>
+        <label class="control-label col-md-3" style="color: white">Género:</label>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="genero" value="hombre"> Masculino
+                <input type="radio" name="genero" value="hombre" style="color: white"> Masculino
             </label>
         </div>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="genero" value="mujer"> Femenino
+                <input type="radio" name="genero" value="mujer" style="color: white"> Femenino
             </label>
         </div>
     </div>

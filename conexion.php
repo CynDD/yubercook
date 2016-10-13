@@ -1,7 +1,7 @@
 <?php
 
         // CONECTAR AL SERVIDOR DE BASE DE DATOS
-    $conex = mysql_connect('127.0.0.1','root','root');
+    $conex = mysql_connect('127.0.0.1','root','');
 
 	//$conex = mysql_connect('mysql9.000webhost.com','a3958288_yc','yc1235711');
     // CONTROLAR CONEXION

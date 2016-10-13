@@ -21,20 +21,21 @@
     <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
-
-  
-</html>
-
-
-
-    <!-- Google Fonts -->
+	 <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
 
+  
+
+</head>
+
+
+   
+
 
  
-  </head>
+  
   <body>
   
  
@@ -112,7 +113,7 @@
              </div>
  
 	<div class="mu-registro-content">
-		<form class="mu-registro-form">
+		<form class="mu-registro-form" enctype="multipart/form-data" method="POST" action='ValidarUsuario.php'>
 		<div class="form-group">
         <label class="control-label col-md-3" style="color: white">Email:</label>
         <div class="col-md-8">
@@ -134,12 +135,13 @@
         </div>
 	 
 	  </div>
-   
+    </form>
     </div>
+	
+	
+   
 	 </div>
-	</form>
    </div>
-    
 </section>
 </body>
 </html>
