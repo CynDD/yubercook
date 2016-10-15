@@ -6,37 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yubercook | Home</title>
 	<?php include 'styles.php';?>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-
-    <!-- Font awesome -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!-- Slick slider -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.css">
-    <!-- Fancybox slider -->
-    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
-    <!-- Theme color -->
-    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
-	 <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
-
   
-
 </head>
-
-
-   
-
-
- 
-  
-  <body>
+<body>
   
  
   <!--START SCROLL TOP BUTTON -->
@@ -86,21 +58,6 @@
     </nav>
   </header>
   
-
-<!--	<div align="center" class="embed-responsive embed-responsive-16by9">
-		<img id="imagen" src="assets/img/imagenLogin.jpg" type="imagen">
-        </img> 
-	</div>
-	
-	
-	
-	 <
-	   
-		<div align="center" class="imagen">
-		<img id="imagen" src="chefs.jpg" type="imagen">
-        </img> 
-	</div>!-->
- <body >
  <section id="mu-registro">	
  <div id="formulario" style = "padding-left:15px";>
 	<div class="mu-registro-area">

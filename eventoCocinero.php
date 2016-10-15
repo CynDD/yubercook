@@ -14,7 +14,7 @@
   ?>
 </head>
 <body>
-<section id="mu-registro" >	
+
   <div id="formulario" style = "padding-left:15px";>
 
     <form class="form-horizontal" enctype="multipart/form-data" method="POST" action='guardarEventoCocinero.php'>
@@ -120,7 +120,7 @@
     </div>
   </form>
 </div>
- </section>
+
 <script src="js/validarEventoCocinero.js" type="text/javascript"></script>
 <?php include 'scripts.php';?>
 </body>
