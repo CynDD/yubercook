@@ -95,7 +95,7 @@
 <body>
 
   <?php
-     $nombre = $_POST["nombre"];
+      $nombre = $_POST["nombre"];
 		 $apellido = $_POST["apellido"];
 		 $inputEmail = $_POST["inputEmail"];
 		 $inputPassword = $_POST["inputPassword"];
@@ -107,7 +107,7 @@
 
 		}
 		 $genero = $_POST["genero"];
-		 $especialidad = $_POST["especialidad"];
+
 
 
 		 include'conexion.php';
@@ -115,8 +115,8 @@
 		 echo $inputPassword;
 		 echo $confirmaPassword;
 		 if($inputPassword==$confirmaPassword){
-			 $sqlregusu ="INSERT INTO usuario (nombre,apellido,fnacimiento,usuario,password,idrol,imagen,telefono,genero,especialidades)
-						VALUES ('".$nombre."','".$apellido."',null,'".$inputEmail."','".$inputPassword."',1,null,".$telefono.",'".$genero."','".$especialidad."')";
+			 $sqlregusu ="INSERT INTO usuario (nombre,apellido,fnacimiento,usuario,password,idrol,imagen,telefono,genero)
+						VALUES ('".$nombre."','".$apellido."',null,'".$inputEmail."','".$inputPassword."',2,null,".$telefono.",'".$genero."')";
 
 			 //echo $sqlregusu;
 			 $result = mysql_query($sqlregusu,$conex);
@@ -136,6 +136,7 @@
 				include'conexion.php';
 			}
 		}
+
       header('Location: home.php?');
     ?>
 

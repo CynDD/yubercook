@@ -31,10 +31,10 @@
   </section>
   <!-- End slider  -->
 
-   <section id="mu-registro" name="mu-registro">
-  <div id="formulario" name="formulario" style = "padding-left:15px";>
+   <section id="mu-registro">
+  <div id="formulario" style = "padding-left:15px";>
 
-    <form id="formCocinero" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#" onsubmit="javascript:obtenerParametros()">
+    <form class="form-horizontal" enctype="multipart/form-data" method="POST" action='guardarEventoCocinero.php'>
     <br/>
     <br/>
     <div class="mu-registro-area">
@@ -66,12 +66,12 @@
             <input type="text" class="form-control" id="inputPrecio" name ="inputPrecio" placeholder="Precio $U">
           </div>
         </div>
-       <!-- <div class="form-group">
+        <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Ubicación de la comida:</label>
           <div class="col-md-8">
             <input type="text" class="form-control" id="inputUbicacion" name="inputUbicacion" placeholder="Ubicación de la comida">
           </div>
-        </div> -->
+        </div>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Descripción de la comida:</label>
           <div class="col-md-8">
@@ -91,15 +91,30 @@
             <input type="number" class="form-control" id="cantMaxPersonas" name ="cantMaxPersonas" placeholder="Cantidad máxima de personas">
           </div>
         </div>
-       
+        <!-- <div class="form-group">
+          <label class="control-label col-md-3" style="color:white">Fecha y hora:</label>
+            <div type="text" class="input-append date" >
+                <input  id="datetimepicker" name="datetimepicker" ></input>
+                  <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                  </span>
+            </div>
+        </div>
+            <script type="text/javascript">
+                $('#datetimepicker').datetimepicker({
+                format: 'dd/MM/yyyy hh:mm:ss',
+                language: 'pt-BR'
+               });
+            </script>
+        </div> -->
         <div class="form-group">
             <div class="form-group">
-              <label class="control-label col-md-3" style="color: white" for="inicioComida">Inicio:</label></br>
+              <label class="control-label col-md-3" style="color: white">Inicio:</label></br>
               <div class="col-md-3">
                 <div class='input-group date' id='inicioComida'>
-                  <input type='text' class="form-control" name='inicioComida' id='inicioComida'/>
+                  <input type='text' class="form-control" />
                   <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar" for="inicioComida"></span>
+                    <span class="glyphicon glyphicon-calendar"></span>
                   </span>
                 </div>
               </div>
@@ -144,34 +159,16 @@
             <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                     	<input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
 
-                      <button type="submit" class="mu-readmore-btn" ">Crear comida</button>
+                      <button type="submit" class="mu-readmore-btn">Crear comida</button>
           </div>
-		   <!-- Start Map section -->
-		   <div class="form-group">
-				<section id="mu-map">
-					<label class="control-label col-md-3" style="color: white">Ubicación de la comida:</label>
-					<iframe id="mapaReferencia" src="pepe.html" width="100%" height="100%" frameborder="0"allowfullscreen></iframe>
-				</section>
-			</div>
-		<!-- End Map section -->
         </form>
       </div>
-	 
     </div>
   </form>
 </div>
  </section>
 
 <script src="js/validarEventoCocinero.js" type="text/javascript"></script>
-<script type="text/javascript">
-	function obtenerParametros(){
-		
-		var latitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('latitud').value;
-		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;
-		//alert('guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud);
-		document.getElementById('formCocinero').action = 'guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud;
-	}
-</script>
 <?php include 'scripts.php';?>
 
 </body>

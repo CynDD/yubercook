@@ -36,7 +36,7 @@ body {
   color: #333333;
   font-size: 15px;
   overflow-x: hidden;
-  
+
 }
 
 
@@ -80,6 +80,25 @@ h2 {
 
 img {
   border: none;
+}
+
+.row{
+margin-top:40px;
+padding: 0 10px;
+}
+.clickable{
+cursor: pointer;
+}
+
+.panel-heading div {
+margin-top: -18px;
+font-size: 15px;
+}
+.panel-heading div span{
+margin-left:5px;
+}
+.panel-body{
+display: none;
 }
 
 .mu-readmore-btn {
@@ -171,7 +190,7 @@ img {
 
 #fondo{
 	background: url(chefs.jpg) center center cover no-repeat fixed;
-	
+
 }
 /* LAYOUTS - Page layout styles */
 /*==================
@@ -1051,7 +1070,9 @@ RESERVATION SECTION
 #mu-gallery .mu-gallery-area #mixit-container .mix {
   display: none;
 }
-
+#mu-fondo {
+   background-color: #222; 
+}
 /*==================
   TESTIMONIAL SECTION
 ====================*/
@@ -2262,7 +2283,7 @@ RESERVATION SECTION
   }
 
   #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title {
-    font-size: 50px;
+    font-size: 30px;
     line-height: 75px;
   }
 

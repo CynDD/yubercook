@@ -15,5 +15,24 @@
 <!-- Add fancyBox -->
 <script type="text/javascript" src="theme/basic/assets/js/jquery.fancybox.pack.js"></script>
 
+<script type="text/javascript" src="js/validarLogin.js"></script>
+<script type="text/javascript" src="js/validarRegistrosCocinero.js"></script>
+<script type="text/javascript" src="js/validarRegistrosComensal.js"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script type="text/javascript" src="js/moment_es.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+           $(function () {
+               $('#inicioComida').datetimepicker(
+                 {locale:'es'}
+               );
+               $('#finComida').datetimepicker(
+                 {locale:'es'}
+               );
+           });
+       </script>
+
 <!-- Custom js -->
 <script src="theme/basic/assets/js/custom.js"></script>

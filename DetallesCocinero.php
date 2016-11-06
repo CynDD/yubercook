@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yubercook | Home</title>
     <?php include 'styles.php';?>
-	<link rel="stylesheet" type="text/css" href="css/EstilosDetCoc.css">
+
 </html>
 
 
@@ -18,7 +18,7 @@
   <!-- END SCROLL TOP BUTTON -->
 
   <!-- Start header section -->
-  
+
   <header id="mu-header">
     <nav class="navbar navbar-default mu-main-navbar" role="navigation">
       <div class="container">
@@ -69,15 +69,15 @@
                 <div class="col-xs-12 col-sm-8">
                     <h2>Yubi Elcocinero</h2>
                     <p><strong>Idiomas: </strong>
-                    	<span class="tags">Espanol</span> 
+                    	<span class="tags">Espanol</span>
                     	<span class="tags">Ingles</span>
 					</p>
                     <p><strong>Especialidades: </strong>
-                		<span class="tags">Pasta</span> 
+                		<span class="tags">Pasta</span>
                 		<span class="tags">Empanadas</span>
 						<span class="tags">Pizza</span>
 					</p>
-                </div>             
+                </div>
                 <div class="col-xs-12 col-sm-4 text-center">
                     <figure>
                         <img src="Images/Yubi.jpg" alt="" class="img-circle img-responsive">
@@ -97,25 +97,25 @@
                             </a>
                             <a href="#">
                                  <span class="fa fa-star-o"></span>
-                            </a> 
+                            </a>
                             </p>
                         </figcaption>
                     </figure>
                 </div>
-            </div>            
+            </div>
             <div class="col-xs-12 divider text-center">
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong> 20,7K </strong></h2>                    
+                    <h2><strong> 20,7K </strong></h2>
                     <p><small>Siguiendo</small></p>
                     <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Seguir </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>4</strong></h2>                    
+                    <h2><strong>4</strong></h2>
                     <p><small>Eventos</small></p>
                     <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Ver eventos </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>43</strong></h2>                    
+                    <h2><strong>43</strong></h2>
                     <p><small>Visitas</small></p>
                     <div class="btn-group dropup btn-block">
                       <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
@@ -134,15 +134,15 @@
                     </div>
                 </div>
             </div>
-    	 </div>                 
+    	 </div>
 		</div>
-		
+
 	        <div class="row text-center pad-top ">
 	            <div class="col-md-12">
 	                <h3>Comentarios</h3>
 	            </div>
 	        </div>
-        
+
 	        <div class="container">
 	            <div class="row  pad-top">
 	                <div class="col-md-8 col-md-offset-2">
@@ -194,11 +194,11 @@
 	                      <!-- COMMENT SECTION - THREE END-->
 	    </ul>
 	                </div>
-              
+
 	            </div>
 	        </div>
-		
-	</div>	
+
+	</div>
 </div>
 
 

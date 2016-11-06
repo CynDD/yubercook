@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+		#map {
+			height: 100%;
+		  }
+		#floating-panel {
+		  position: absolute;
+		  top: 10px;
+		  left: 25%;
+		  z-index: 5;
+		  background-color: #fff;
+		  padding: 5px;
+		  border: 1px solid #999;
+		  text-align: center;
+		  font-family: 'Roboto','sans-serif';
+		  line-height: 30px;
+		  padding-left: 10px;
+		}
+
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Montevideo, Uruguay">
+	  <input id="latitud" name="latitud" type="hidden" value="">
+	  <input id="longitud" name="longitud" type="hidden" value="">
+      <input id="submit" type="button" value="Buscar">
+    </div>
+    <div id="map"></div>
+    <script>
+    var geocoder;
+    var map;
+		function initMap() {
+		   map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 8,
+			center: {lat: -34.872412, lng: -56.162109}
+		  });
+		   geocoder = new google.maps.Geocoder();
+
+		  document.getElementById('submit').addEventListener('click', function() {
+			geocodeAddress(geocoder, map);
+
+		  });
+
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+
+      });
+       console.log(results[0].geometry.location.lat());
+        console.log(results[0].geometry.location.lng());
+		document.getElementById('latitud').value = results[0].geometry.location.lat();
+		document.getElementById('longitud').value = results[0].geometry.location.lng();
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+<!-- AIzaSyCgXZDnKa1eao5nyJ6bXzawkYETLw_SqKY -->
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXZDnKa1eao5nyJ6bXzawkYETLw_SqKY&signed_in=true&callback=initMap&sensor=true"
+        async defer></script>
+  </body>
+</html>

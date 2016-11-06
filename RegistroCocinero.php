@@ -18,7 +18,7 @@
 <section id="mu-registro" >
 <div id="formulario" style = "padding-left:15px";>
 
-	<form class="form-horizontal" enctype="multipart/form-data" method="POST" action='GuardarDatosCocinero.php'>
+	<form class="form-horizontal" enctype="multipart/form-data" method="POST" action='GuardarDatosCocinero.php' id="formularioCocinero">
 	<!-- Encierro en un divisor la imagen para centrarlo div.logo-->
   <!--  <div class="logo">
         <!-- Pondré un logotipo con img+tab
@@ -72,7 +72,7 @@
             <input type="tel" class="form-control" id="telefono" name ="telefono" placeholder="Telefono">
         </div>
     </div>
-	<div class="form-group">
+	<!-- <div class="form-group">
        <label class="control-label col-md-3" style="color: white">Idiomas:</label>
        <div class="col-md-8">
 		<select  name="idiomas[]"  multiple class="form-control">
@@ -83,7 +83,19 @@
 		<option value="5">5</option>
 	</select>
 	</div>
+</div> -->
+ <div class="form-group">
+   <label class="control-label col-md-3" style="color: white">Idiomas:</label>
+   <div class="col-md-8">
+     <select id="idioma" name="idiomas[]"  multiple class="form-control">
+       <option value="1">Español</option>
+       <option value="2">Inglés</option>
+       <option value="3">Portugués</option>
+       <option value="4">Italiano</option>
+       <option value="5">Francés</option>
+     </select>
    </div>
+</div>
    <div class="form-group">
           <div class="form-group">
             <label class="control-label col-md-3" style="color: white">Fecha:</label></br>
@@ -93,7 +105,7 @@
           </div>
         </div>
 
-	<div class="form-group">
+	<!-- <div class="form-group">
         <label class="control-label col-md-3" style="color: white" >Género:</label>
         <div class="col-md-2">
             <label class="radio-inline" style="color: white">
@@ -105,7 +117,21 @@
                 <input type="radio" name="genero" value="mujer" > Femenino
             </label>
         </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-md-3" style="color: white">Género:</label>
+        <div class="col-md-2">
+            <label class="radio-inline" style="color: white">
+                <input id="generoM" type="radio" name="genero" value="masculino"> Masculino
+            </label>
+        </div>
+        <div class="col-md-2">
+            <label class="radio-inline" style="color: white">
+                <input id="generoF" type="radio" name="genero" value="femenino"> Femenino
+            </label>
+        </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-md-3" style="color: white">Especialidades:</label></br>
         <div class="col-md-8">
@@ -116,10 +142,8 @@
     <br>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-9" align="right">
-			<input type="reset" class="btn btn-default" value="Limpiar">
-			<button type="submit" class="mu-readmore-btn">Enviar</button>
-
-
+			       <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
+			          <button type="button" class="mu-readmore-btn" onclick="submit()">Enviar</button>
         </div>
 
 	  </div>
@@ -127,8 +151,7 @@
     </div>
 	</form>
 	</div>
-
-
   </section>
+  <?php include 'scripts.php'; ?>
 </body>
 </html>

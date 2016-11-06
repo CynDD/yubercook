@@ -69,60 +69,36 @@
 <body>
 
   <?php
-		 $nombre = $_POST["nombre"];
-		 $inputPrecio = $_POST["inputPrecio"];
-		 $descripcionComida = $_POST["descripcionComida"];
-		 $cantMinPersonas = $_POST["cantMinPersonas"];
-		 $cantMaxPersonas = $_POST["cantMaxPersonas"];
-		 $aptoCeliacos = $_POST["aptoCeliacos"];
-		 $fechaHora = $_POST["inicioComida"];
-		 $latitud=	$_GET["latitud"];
-		 $longitud=	$_GET["longitud"];
+		 $idevento = $_POST["idevento"];
+		 $idusuario = $_POST["idusuario"];
+		 
 
 
 		 include'conexion.php';
 		 //Inserta un nuevo registro en tabla usuario, con los datos del nuevo cocinero
-		 echo $nombre;
-		 echo $inputPrecio;
-		 echo $descripcionComida;
-		 echo $cantMinPersonas;
-		 echo $cantMaxPersonas;
-		 echo $aptoCeliacos;
-		 echo $latitud;
-		 echo $longitud;
-
-		 echo date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)));
-
-			$image = $_FILES['imagenComida']['tmp_name'];
-			$img = file_get_contents($image);
-			$img = mysql_real_escape_string($img,$conex);
-			//Se insertan los datos de la comida en la tabla Comida
-			$sqlinscomida ="INSERT INTO comida (nombreComida,imagen,descripcion) VALUES ('".$nombre."','" . $img . "','".$descripcionComida."')";
-			 echo $sqlinscomida;
-			 $result = mysql_query($sqlinscomida,$conex);
-
-			 //Se inserta en tabla Comida la comida, luego se obtiene su Id
-			$sqlid = "SELECT idcomida FROM comida where nombreComida='".$nombre."' and descripcion='".$descripcionComida."'";
-			echo $sqlid;
-			$result2 = mysql_query($sqlid,$conex);
-			$reg1 = mysql_fetch_array($result2);
-			echo "Impime el idcomida= ".$reg1['idcomida'];
-
-			//Se inserta en tabla Ubicacion la ubicacion, luego se obtiene su Id
-			$sqlinsubicacion ="INSERT INTO ubicacion (latitud,longitud) VALUES ('".$latitud."','" . $longitud . "')";
-			$result = mysql_query($sqlinsubicacion,$conex);
-			$sqlidubicacion = "SELECT idubicacion FROM ubicacion where latitud='".$latitud."' and longitud='".$longitud."'";
-
-			$resultUbi = mysql_query($sqlidubicacion,$conex);
-			$regUbi = mysql_fetch_array($resultUbi);
-
-			//Se insertan los datos del evento en la tabla Evento
-			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
-						VALUES (1,".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
-			echo $sqlinsevento;
-			$result = mysql_query($sqlinsevento,$conex);
-
-			header('Location: home.php?');
+		 echo $idevento;
+		 echo $idusuario;
+			
+			//Si quedan cupos en el evento se procede a almacenar
+			$sqlev = "SELECT cantcomensales,cantmaxpersonas FROM evento WHERE idcocinero=".$idusuario." and idevento=".$idevento;
+			echo $sqlev;
+			$resultControl = mysql_query($sqlev,$conex);
+			$regControl = mysql_fetch_array($resultControl);
+			
+			if($regControl['cantcomensales']<$regControl['cantmaxpersonas']){
+				//Se insertan los datos del evento en la tabla Evento
+				$sqlinsevento ="INSERT INTO comensalevento(idusuario,idevento)
+							VALUES (".$idusuario.",".$idevento.")";
+				echo $sqlinsevento;
+				$result = mysql_query($sqlinsevento,$conex);
+				
+				//Se actualiza la cantidad de comensales en tabla Evento
+				$sqlupdevento ="UPDATE evento SET cantcomensales=(cantcomensales+1)
+								WHERE idcocinero=".$idusuario." and idevento=".$idevento." and cantcomensales<cantmaxpersonas)";
+				echo $sqlupdevento;
+				$result = mysql_query($sqlupdevento,$conex);
+			}
+			//header('Location: home.php?');
     ?>
 
 </body>

@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yubercook | Home</title>
+	<?php include 'styles.php';?>
+
+</head>
+<body>
+
+  <header id="mu-header">
+    <?php include 'menu.php';?>
+  </header>
+  <!-- Start slider  -->
+  <section id="mu-slider">
+      <?php include 'slider.php';?>
+  </section>
+
+
+  <!--START SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+      <span>Top</span>
+  </a>
+  <!-- END SCROLL TOP BUTTON -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -61,3 +89,6 @@
         </div>
     </div>
 </div>
+<?php include 'scripts.php'; ?>
+</body>
+</html>
