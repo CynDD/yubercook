@@ -135,10 +135,11 @@
 				$sqlidiomausu ="INSERT INTO idiomausuario (idusuario,idioma)
 						VALUES (".$reg1['idusuario'].",".$_POST['idiomas'][$i].")";
 				$result = mysql_query($sqlidiomausu,$conex);
-				include'conexion.php';
+				//include'conexion.php';
 			}
 		}
-    header('Location: home.php?');
+
+     header('Location: index.php?');
     ?>
 
 </body>

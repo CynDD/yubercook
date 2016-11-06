@@ -89,7 +89,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <div class="form-group" >
           <label class="control-label col-md-3" style="color:white">Fecha de Nacimiento:</label></br>
           <div class="col-md-8">
-              <label   id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy"  style="color:white"><?php echo $fnacimiento;?></label>
+
+             
+
+              <label   id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy" style="color: white" ><?php echo $fnacimiento;?></label>
+
           </div>
         </div>
         <div class="form-group">
