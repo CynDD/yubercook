@@ -24,11 +24,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   <header id="mu-header">
     <?php include 'menu.php';?>
   </header>
-  <!-- Start slider  -->
-  <section id="mu-slider">
-      <?php include 'slider.php';?>
-  </section>
-  <!-- End slider  -->
+  
 
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
@@ -37,7 +33,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idevento = $_GET["idevento"];
 
 
-  $sqlCont = "SELECT c.nombreComida, c.descripcion, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, e.aptoCeliaco, e.fecha FROM evento e
+  $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, e.aptoCeliaco, e.fecha FROM evento e
               inner join comida c on c.idcomida = e.idcomida
               inner join usuario u on u.idusuario = e.idcocinero
 			        inner join ubicacion ub on ub.idubicacion = e.idubicacion
@@ -46,6 +42,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $resultCont = mysql_query($sqlCont,$conex);
   $reg = mysql_fetch_array($resultCont);
 
+  $idusuario = "  $reg[idusuario]";
   $nombre = "  $reg[nombreComida]";
   $descripcion  = "$reg[descripcion]";
   $imagen  = "$reg[imagen]";
@@ -61,9 +58,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <section id="mu-registro">
   <div id="formulario" style = "padding-left:15px";>
 
-    <form class="form-horizontal" id="detalleEvento" >
+    <form class="form-horizontal" id="detalleEvento" enctype="multipart/form-data" method="POST" action='guardarCompraComensal.php' >
 		<input id="latitud" type="hidden" value="<?php echo $latitud;?>" />
 		<input id="longitud" type="hidden" value="<?php echo $longitud;?>" />
+		<input id="idusuario" name="idusuario" type="hidden" value="<?php echo $idusuario;?>" />
+		<input id="idevento" name="idevento" type="hidden" value="<?php echo $idevento;?>" />
 	<br/>
     <br/>
     <br/>
@@ -140,6 +139,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 				</section>
 			</div>
 		<!-- End Map section -->
+		<div class="form-group">
+			<button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
+		</div>
 
         <br>
 
