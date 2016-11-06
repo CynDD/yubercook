@@ -1,5 +1,5 @@
 function validarRegistroCocinero(){
-	debugger;
+	//debugger;
 	var languages=document.forms["formularioCocinero"]["idiomas[]"].value;
 	var fechaN = document.getElementById("fecha").value;
 	//var genero = document.getElementByName("genero[]");
