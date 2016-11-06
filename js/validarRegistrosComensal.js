@@ -1,62 +1,73 @@
 function validarRegistroComensal(){
-	//debugger;
+	var genero=document.forms["formularioComensal"]["genero"];
+	debugger;
 	ok = true;
 		if(ok && nombre.value==""){
 			ok=false;
-			alert("Debe ingresar su nombre.");
+//			alert("Debe ingresar su nombre.");
+		$('#nombreAlertComensal').show();
 			nombre.focus();
 		}
     if(ok && apellido.value==""){
 			ok=false;
-			alert("Debe ingresar su apellido.");
+		//	alert("Debe ingresar su apellido.");
+		$('#apellidoAlertComensal').show();
 			apellido.focus();
 		}
     if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
 			ok=false;
-			alert("Debe ingresar su correo electrónico.");
+		//	alert("Debe ingresar su correo electrónico.");
+		$('#inputEmailAlertComensal').show();
 			inputEmail.focus();
 		}
     if(ok && inputPassword.value==""){
 			ok=false;
-			alert("Debe ingresar su contraseña.");
+			//alert("Debe ingresar su contraseña.");
+			$('#inputPasswordAlertComensal').show();
 			inputPassword.focus();
 		}
     if(ok && confirmaPassword.value==""){
 			ok=false;
-			alert("Debe ingresar su contraseña.");
+			//alert("Debe ingresar su contraseña.");
+			$('#confirmaPasswordAlertComensal').show();
 			confirmaPassword.focus();
 		}
     if(ok && inputPassword.value != confirmaPassword.value){
       ok = false;
-      alert("Debe ingresar contraseñas iguales.");
-      confirmaPassword.focus();
+      //alert("Debe ingresar contraseñas iguales.");
+			$('#passwordEqualsAlertComensal').show();
+			confirmaPassword.focus();
     }
     if(ok && telefono.value == null){
       ok = false;
-      alert("Debe ingresar contraseñas iguales.");
-      telefono.focus();
+      //alert("Debe ingresar contraseñas iguales.");
+			$('#telefonoAlertComensal').show();
+			telefono.focus();
     }
 		var languages=document.forms["formularioComensal"]["idiomas[]"].value;
-		if(ok && (languages.isEmpty()) ){
+		if(ok && (idioma.value == null)){
 		//if(ok && (languages == null || languages = "") ){
 			ok = false;
-			alert("Debe ingresar un idioma.");
+			//alert("Debe ingresar un idioma.");
+			$('#idiomaAlertComensal').show();
 			idioma.focus();
 		}
-		fechaN = document.getElementById("fecha").value;
+		fechaN = document.getElementById("fechaid").value;
 		if (ok && fechaN == ""){
 			ok = false;
-			alert("Debe seleccionar una fecha de nacimiento.");
-			fechaNac.focus();
+			//alert("Debe seleccionar una fecha de nacimiento.");
+			$('#fechaAlertComensal').show();
+			fecha.focus();
 		}
-		genero = document.getElementByName("genero[]");
-    if( !genero[0].checked && !genero[1].checked) {
+
+    if( ok && genero.checked == 'undefined') {
       ok = false;
-      alert("Debe seleccionar género masculino o femenino.");
-      generoM.focus();
+      //alert("Debe seleccionar género masculino o femenino.");
+			$('#generoAlertComensal').show();
+			generoM.focus();
     }
 		if(ok){
-      submit();
+      document.forms["formularioComensal"].submit();
 		}
 	}
 

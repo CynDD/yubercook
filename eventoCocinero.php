@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if(!isset($_SESSION["statuscol"]) || $_SESSION["statuscol"]==null || $_SESSION["statuscol"]=="error" || $_SESSION["statuscol"]=="logout"){
+print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
+}
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +36,7 @@
   </section>
   <!-- End slider  -->
 
-   <section id="mu-registro" name="mu-registro">
+   <section id="mu-registro" name="mu-registro">>
   <div id="formulario" name="formulario" style = "padding-left:15px";>
 
     <form id="formCocinero" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#" onsubmit="javascript:obtenerParametros()">
@@ -91,15 +96,30 @@
             <input type="number" class="form-control" id="cantMaxPersonas" name ="cantMaxPersonas" placeholder="Cantidad máxima de personas">
           </div>
         </div>
-       
+        <!-- <div class="form-group">
+          <label class="control-label col-md-3" style="color:white">Fecha y hora:</label>
+            <div type="text" class="input-append date" >
+                <input  id="datetimepicker" name="datetimepicker" ></input>
+                  <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                  </span>
+            </div>
+        </div>
+            <script type="text/javascript">
+                $('#datetimepicker').datetimepicker({
+                format: 'dd/MM/yyyy hh:mm:ss',
+                language: 'pt-BR'
+               });
+            </script>
+        </div> -->
         <div class="form-group">
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white" for="inicioComida">Inicio:</label></br>
               <div class="col-md-3">
-                <div class='input-group date' id='inicioComida'>
+                <div class='input-group date' id='inicioComida' >
                   <input type='text' class="form-control" name='inicioComida' id='inicioComida'/>
                   <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar" for="inicioComida"></span>
+                    <span class="glyphicon glyphicon-calendar" for=""></span>
                   </span>
                 </div>
               </div>
@@ -144,7 +164,7 @@
             <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                     	<input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
 
-                      <button type="submit" class="mu-readmore-btn" ">Crear comida</button>
+                      <button type="submit" class="mu-readmore-btn">Crear comida</button>
           </div>
 		   <!-- Start Map section -->
 		   <div class="form-group">
@@ -156,7 +176,7 @@
 		<!-- End Map section -->
         </form>
       </div>
-	 
+
     </div>
   </form>
 </div>
@@ -165,7 +185,7 @@
 <script src="js/validarEventoCocinero.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function obtenerParametros(){
-		
+
 		var latitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('latitud').value;
 		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;
 		//alert('guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud);

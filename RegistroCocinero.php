@@ -35,12 +35,24 @@
 
 	<div class="mu-registro-content">
 		<form class="mu-registro-form">
+
 			<div class="form-group">
 				<label class="control-label col-md-3 " style="color: white">Nombre:</label>
 			<div class="col-md-8">
-				<input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre">
+				<input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre" required="true">
+		  </div>
+        </div>
+
+      <div class="form-group" >
+        <div id="prueba" class="col-md-3">
+        </div>
+    <div id = "nombreAlertCocinero"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+      <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+      <strong>Atención!</strong> Debe ingresar su nombre.
+    </div>
 			</div>
-			</div>
+
+
     <div class="form-group">
         <label class="control-label col-md-3" style="color: white" >Apellido:</label>
         <div class="col-md-8">
@@ -100,7 +112,8 @@
           <div class="form-group">
             <label class="control-label col-md-3" style="color: white">Fecha:</label></br>
             <div class="col-md-8">
-                <input id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                <input id="fecha" name="fecha" >
+
             </div>
           </div>
         </div>
@@ -143,7 +156,7 @@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-9" align="right">
 			       <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-			          <button type="button" class="mu-readmore-btn" onclick="submit()">Enviar</button>
+			          <button type="button" class="mu-readmore-btn" onclick="return validarRegistroCocinero()">Enviar</button>
         </div>
 
 	  </div>
@@ -152,6 +165,11 @@
 	</form>
 	</div>
   </section>
+  <script>
+       $( document ).ready(function() {
+           $('#fecha').datepicker({dateFormat: 'yyyy-dd-mm'})
+       });
+   </script>
   <?php include 'scripts.php'; ?>
 </body>
 </html>

@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
   <title>Yubercook | Home</title>
   <?php include 'styles.php';?>
-  </html>
 </head>
 
 <body>
@@ -80,7 +83,8 @@
              <div class="form-group">
                <label class="control-label col-md-3" style="color: white">Fecha:</label></br>
                <div class="col-md-8">
-                   <input id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                   <input id="fechaid" name="fecha" >
+
                </div>
              </div>
            </div>
@@ -102,7 +106,7 @@
 <div class="form-group">
   <div class="col-md-offset-2 col-md-9" align="right">
     <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-    <<button type="button" class="mu-readmore-btn" onclick="submit()">Enviar</button>
+    <<button type="button" class="mu-readmore-btn" onclick="return validarRegistroComensal()">Enviar</button>
 
   </div>
 </div>
@@ -111,6 +115,11 @@
 </div>
 </div>
 </section>
+<script>
+     $( document ).ready(function() {
+         $('#fechaid').datepicker();
+     });
+ </script>
 <?php include 'scripts.php'; ?>
 </body>
 </html>

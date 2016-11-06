@@ -1,18 +1,20 @@
 function validarInicioSesion(){
-  debugger;
+  //debugger;
   ok = true;
 		if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
 			ok=false;
-			alert("Debe ingresar su correo electrónico.");
+			//alert("Debe ingresar su correo electrónico.");
+      $('#inputEmailAlert').show();
 			inputEmail.focus();
 		}
-    if(ok && inputPassword.value==""){
+    if(ok && inputPassword.value ==""){
 			ok=false;
-			alert("Debe ingresar su contraseña.");
-			inputPassword.focus();
+			//alert("Debe ingresar su contraseña.");
+      $('#inputPasswordAlert').show();
+      inputPassword.focus();
 		}
     if(ok){
-      submit();
+      document.forms["formularioLogin"].submit();
     }
 }
 

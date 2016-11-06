@@ -101,6 +101,8 @@
 		 $inputPassword = $_POST["inputPassword"];
 		 $confirmaPassword = $_POST["confirmaPassword"];
 		 $telefono = $_POST["telefono"];
+     $fnacimiento =$_POST["fecha"];
+     $date = date('y-m-d', strtotime($fnacimiento));
 		 for ($i=0;$i<count($_POST['idiomas']);$i++) {
 
 		  echo "<p>'".$_POST['idiomas'][$i]."'</p>";
@@ -116,7 +118,7 @@
 		 echo $confirmaPassword;
 		 if($inputPassword==$confirmaPassword){
 			 $sqlregusu ="INSERT INTO usuario (nombre,apellido,fnacimiento,usuario,password,idrol,imagen,telefono,genero)
-						VALUES ('".$nombre."','".$apellido."',null,'".$inputEmail."','".$inputPassword."',2,null,".$telefono.",'".$genero."')";
+						VALUES ('".$nombre."','".$apellido."','".$date."','".$inputEmail."','".$inputPassword."',2,null,".$telefono.",'".$genero."')";
 
 			 //echo $sqlregusu;
 			 $result = mysql_query($sqlregusu,$conex);

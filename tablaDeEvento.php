@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["statuscol"]) || $_SESSION["statuscol"]==null || $_SESSION["statuscol"]=="error" || $_SESSION["statuscol"]=="logout"){
+print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +27,9 @@
   </section>
 
 <section id="mu-contact">
+
+
+
 	<div class="table-responsive" id="latabla"></div>
 </div>
 </section>

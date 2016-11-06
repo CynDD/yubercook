@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["statuscol"]) || $_SESSION["statuscol"]==null || $_SESSION["statuscol"]=="error" || $_SESSION["statuscol"]=="logout"){
+print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,42 +75,42 @@
       <form class="mu-registro-form">
 
         <div class="form-group" >
-          <label class="control-label col-md-3 " >Nombre :</label>
+          <label class="control-label col-md-3 "  style="color: white">Nombre :</label>
           <div class="col-md-8">
-              <label   class="control-label"  id="nombre" name ="nombre" readonly> <?php echo $nombre;?> </label>
+              <label   class="control-label" style="color: white" id="nombre" name ="nombre" readonly> <?php echo $nombre;?> </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3" >Apellido:</label>
+          <label class="control-label col-md-3" style="color: white">Apellido:</label>
           <div class="col-md-8">
-              <label  class="control-label"  id="apellido" name ="apellido" readonly> <?php echo $apellido;?> </label>
+              <label  class="control-label" style="color: white" id="apellido" name ="apellido" readonly> <?php echo $apellido;?> </label>
           </div>
         </div>
         <div class="form-group" >
-          <label class="control-label col-md-3" >Fecha de Nacimiento:</label></br>
+          <label class="control-label col-md-3" style="color: white">Fecha de Nacimiento:</label></br>
           <div class="col-md-8">
-              <label   id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy"  readonly><?php echo $fnacimiento;?></label>
+              <label   id="fecha" style="color: white" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy"  readonly><?php echo $fnacimiento;?></label>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3"  >Telefono:</label>
+          <label class="control-label col-md-3" style="color: white" >Telefono:</label>
           <div class="col-md-8">
-            <label  type="number" class="control-label"  id="telefono" name ="telefono" readonly><?php echo $telefono;?></label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-md-3" >Género:</label>
-          <div class="col-md-8">
-            <label rows="3"  class="control-label" id="Genero"  name ="genero" readonly> <?php echo $genero;?> </label>
+            <label  type="number" style="color: white" class="control-label"  id="telefono" name ="telefono" readonly><?php echo $telefono;?></label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3"  >Especialidades</label>
+          <label class="control-label col-md-3" style="color: white" >Género:</label>
           <div class="col-md-8">
-            <label  type="number" class="control-label"  id="especialidades" name ="especialidades" readonly><?php echo $especialidades;?></label>
+            <label rows="3" style="color: white" class="control-label" id="Genero"  name ="genero" readonly> <?php echo $genero;?> </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-3" style="color: white" >Especialidades</label>
+          <div class="col-md-8">
+            <label  type="number" style="color: white" class="control-label"  id="especialidades" name ="especialidades" readonly><?php echo $especialidades;?></label>
           </div>
         </div>
 

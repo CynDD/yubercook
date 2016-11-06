@@ -3,115 +3,62 @@ function validarRegistroCocinero(){
 	var languages=document.forms["formularioCocinero"]["idiomas[]"].value;
 	var fechaN = document.getElementById("fecha").value;
 	//var genero = document.getElementByName("genero[]");
-	var genero=document.forms["formularioCocinero"]["genero[]"].value;
+	var genero=document.forms["formularioCocinero"]["genero"];
 	ok = true;
 	if(ok && nombre.value==""){
 			ok=false;
-			alert("Debe ingresar su nombre.");
-			nombre.focus();
+		  $('#nombreAlertCocinero').show();
+    	nombre.focus();
 	} else if(ok && apellido.value==""){
 			ok=false;
-			alert("Debe ingresar su apellido.");
+			//alert("Debe ingresar su apellido.");
+      $('#apellidoAlertCocinero').show();
 			apellido.focus();
 	} else if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
 			ok=false;
-			alert("Debe ingresar su correo electrónico.");
-			inputEmail.focus();
+			//alert("Debe ingresar su correo electrónico.");
+      $('#inputEmailAlertCocinero').show();
+      inputEmail.focus();
 		} else if(ok && inputPassword.value==""){
 			ok=false;
-			alert("Debe ingresar su contraseña.");
-			inputPassword.focus();
+			//alert("Debe ingresar su contraseña.");
+      $('#inputPasswordAlertCocinero').show();
+      inputPassword.focus();
 		} else if(ok && confirmaPassword.value==""){
 			ok=false;
-			alert("Debe ingresar su contraseña.");
-			confirmaPassword.focus();
+			//alert("Debe ingresar su contraseña.");
+      $('#confirmaPasswordAlertCocinero').show();
+      confirmaPassword.focus();
 		} else if(ok && inputPassword.value != confirmaPassword.value){
       ok = false;
-      alert("Debe ingresar contraseñas iguales.");
+      //alert("Debe ingresar contraseñas iguales.");
+      $('#passwordEqualsAlertCocinero').show();
       confirmaPassword.focus();
     } else if(ok && telefono.value == null){
       ok = false;
-      alert("Debe ingresar contraseñas iguales.");
+      //alert("Debe ingresar contraseñas iguales.");
+      $('#telefonoAlertCocinero').show();
       telefono.focus();
-    } else if(ok && (languages.isEmpty()) ){
+    } else if(ok && (idioma.value == null)){
 			//if(ok && (languages[0] == null || languages[0] = "") ){
 			ok = false;
-			alert("Debe ingresar un idioma.");
-			idioma.focus();
+			//alert("Debe ingresar un idioma.");
+      $('#idiomaAlertCocinero').show();
+      idioma.focus();
 		} else if (ok && fechaN == ""){
 			ok = false;
-			alert("Debe seleccionar una fecha de nacimiento.");
-			fechaNac.focus();
-		} else if( !genero[0].checked && !genero[1].checked) {
+			//alert("Debe seleccionar una fecha de nacimiento.");
+      $('#fechaAlertCocinero').show();
+			fecha.focus();
+		} else if( ok && genero.checked == 'undefined') {
       ok = false;
-      alert("Debe seleccionar género masculino o femenino.");
+      //alert("Debe seleccionar género masculino o femenino.");
+      $('#generoAlertCocinero').show();
       generoM.focus();
     }
 		if(ok){
-      submit();
-		}
-	}
-
-function validarRegistroCocinero2(){
-	debugger;
-	ok = true;
-		if(ok && nombre.value==""){
-			ok=false;
-			alert("Debe ingresar su nombre.");
-			nombre.focus();
-		}
-    if(ok && apellido.value==""){
-			ok=false;
-			alert("Debe ingresar su apellido.");
-			apellido.focus();
-		}
-    if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
-			ok=false;
-			alert("Debe ingresar su correo electrónico.");
-			inputEmail.focus();
-		}
-    if(ok && inputPassword.value==""){
-			ok=false;
-			alert("Debe ingresar su contraseña.");
-			inputPassword.focus();
-		}
-    if(ok && confirmaPassword.value==""){
-			ok=false;
-			alert("Debe ingresar su contraseña.");
-			confirmaPassword.focus();
-		}
-    if(ok && inputPassword.value != confirmaPassword.value){
-      ok = false;
-      alert("Debe ingresar contraseñas iguales.");
-      confirmaPassword.focus();
-    }
-    if(ok && telefono.value == null){
-      ok = false;
-      alert("Debe ingresar contraseñas iguales.");
-      telefono.focus();
-    }
-		var languages=document.forms["formularioCocinero"]["idiomas[]"].value;
-if(ok && (languages.isEmpty()) ){
-			//if(ok && (languages[0] == null || languages[0] = "") ){
-			ok = false;
-			alert("Debe ingresar un idioma.");
-			idioma.focus();
-		}
-		fechaN = document.getElementById("fechaNac").value;
-		if (ok && fechaN == ""){
-			ok = false;
-			alert("Debe seleccionar una fecha de nacimiento.");
-			fechaNac.focus();
-		}
-		genero = document.getElementByName("genero[]");
-    if( !genero[0].checked && !genero[1].checked) {
-      ok = false;
-      alert("Debe seleccionar género masculino o femenino.");
-      generoM.focus();
-    }
-		if(ok){
-      submit();
-		}
+      document.forms["formularioCocinero"].submit();
+		}else{console.log("error");}
 	}
 
   function validarEmail(email) {

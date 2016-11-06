@@ -518,7 +518,7 @@ display: none;
 ====================*/
 #mu-counter {
   background-attachment: fixed;
-  background-image: url("assets/img/counter-bg.jpg");
+  background-image: url("assets/img/counter2.jpg");
   background-size: cover;
   display: inline;
   float: left;
@@ -1071,7 +1071,7 @@ RESERVATION SECTION
   display: none;
 }
 #mu-fondo {
-   background-color: #222; 
+   background-color: #222;
 }
 /*==================
   TESTIMONIAL SECTION

@@ -35,7 +35,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
 <!-- Start header section -->
 <header id="mu-header">
-  <?php include 'menu.php';?>
+  <?php include 'menu_Cocinero.php';?>
 </header>
 <!-- End header section -->
 

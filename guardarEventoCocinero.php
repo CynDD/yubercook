@@ -98,7 +98,7 @@
 			$img = mysql_real_escape_string($img,$conex);
 			//Se insertan los datos de la comida en la tabla Comida
 			$sqlinscomida ="INSERT INTO comida (nombreComida,imagen,descripcion) VALUES ('".$nombre."','" . $img . "','".$descripcionComida."')";
-			 echo $sqlinscomida;
+			 //echo $sqlinscomida;
 			 $result = mysql_query($sqlinscomida,$conex);
 
 			 //Se inserta en tabla Comida la comida, luego se obtiene su Id
@@ -117,12 +117,12 @@
 			$regUbi = mysql_fetch_array($resultUbi);
 
 			//Se insertan los datos del evento en la tabla Evento
-			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
-						VALUES (1,".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
+			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco)
+						VALUES (1,".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."')";
 			echo $sqlinsevento;
 			$result = mysql_query($sqlinsevento,$conex);
 
-			header('Location: home.php?');
+			 header('Location: home.php?');
     ?>
 
 </body>
