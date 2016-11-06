@@ -25,7 +25,7 @@
       $_SESSION["fullname"]=$nombre ." ". $apellido;
       //$sqllogin ="INSERT INTO status(fecha,userid,statuscol) VALUES (NOW(),'".$idusuario."','".$statuscol."')";
       //$resultCont = mysql_query($sqllogin,$conex);
-      //$_SESSION["usuario"] = $usuario;
+		$_SESSION["idusuario"] = $idusuario;
        $_SESSION["statuscol"] = $statuscol;
        if($idrol ==1){
 

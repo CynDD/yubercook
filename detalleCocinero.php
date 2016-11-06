@@ -15,20 +15,17 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
   <title>Yubercook | Detalle evento</title>
   <?php
-  //include_once 'php/functions.php';
+  
   include 'styles.php';
   ?>
 </head>
 <body onload="cargarPunto()">
 
-  <header id="mu-header">
-    <?php include 'menu.php';?>
+<header id="mu-header">
+    <?php include 'menu_Comensal.php';?>
   </header>
-  <!-- Start slider  -->
-  <section id="mu-slider">
-      <?php include 'slider.php';?>
-  </section>
-  <!-- End slider  -->
+  
+
 
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
@@ -55,9 +52,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $especialidades = "$reg[especialidades]";
 
 ?>
+<section id="mu-registro">
+
   <div id="formulario" style = "padding-left:15px";>
 
-    <form class="form-horizontal" id="detalleCocinero" >
+    <form class="form-horizontal" id="detalleCocinero" action='tablaDeEvento.php#latabla'  >
 
 	<br/>
     <br/>
@@ -75,53 +74,56 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
       <form class="mu-registro-form">
 
         <div class="form-group" >
-          <label class="control-label col-md-3 "  style="color: white">Nombre :</label>
+          <label class="control-label col-md-3 " style="color:white">Nombre :</label>
           <div class="col-md-8">
-              <label   class="control-label" style="color: white" id="nombre" name ="nombre" readonly> <?php echo $nombre;?> </label>
+              <label   class="control-label"  id="nombre" name ="nombre" style="color:white"> <?php echo $nombre;?> </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3" style="color: white">Apellido:</label>
+          <label class="control-label col-md-3" style="color:white">Apellido:</label>
           <div class="col-md-8">
-              <label  class="control-label" style="color: white" id="apellido" name ="apellido" readonly> <?php echo $apellido;?> </label>
+              <label  class="control-label"  id="apellido" name ="apellido" style="color:white"> <?php echo $apellido;?> </label>
           </div>
         </div>
         <div class="form-group" >
-          <label class="control-label col-md-3" style="color: white">Fecha de Nacimiento:</label></br>
+          <label class="control-label col-md-3" style="color:white">Fecha de Nacimiento:</label></br>
           <div class="col-md-8">
-              <label   id="fecha" style="color: white" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy"  readonly><?php echo $fnacimiento;?></label>
+              <label   id="fecha" name="fecha" data-provide="datepicker" data-date-format="dd/mm/yyyy"  style="color:white"><?php echo $fnacimiento;?></label>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3" style="color: white" >Telefono:</label>
+          <label class="control-label col-md-3" style="color:white">Telefono:</label>
           <div class="col-md-8">
-            <label  type="number" style="color: white" class="control-label"  id="telefono" name ="telefono" readonly><?php echo $telefono;?></label>
+            <label  type="number" class="control-label"  id="telefono" name ="telefono" style="color:white"><?php echo $telefono;?></label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3" style="color: white" >Género:</label>
+          <label class="control-label col-md-3" style="color:white">Género:</label>
           <div class="col-md-8">
-            <label rows="3" style="color: white" class="control-label" id="Genero"  name ="genero" readonly> <?php echo $genero;?> </label>
+            <label rows="3"  class="control-label" id="Genero"  name ="genero" style="color:white"> <?php echo $genero;?> </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3" style="color: white" >Especialidades</label>
+          <label class="control-label col-md-3" style="color:white">Especialidades</label>
           <div class="col-md-8">
-            <label  type="number" style="color: white" class="control-label"  id="especialidades" name ="especialidades" readonly><?php echo $especialidades;?></label>
+            <label  type="number" class="control-label"  id="especialidades" name ="especialidades" style="color:white"><?php echo $especialidades;?></label>
           </div>
         </div>
-
+		<div class="form-group">
+			<button type="button" class="mu-readmore-btn" onclick="submit()">Volver</button>
+		</div>
 
         <br>
 
         </form>
       </div>
     </div>
+	
   </form>
-</div>
+</section>
 
 <?php include 'scripts.php'; ?>
 </body>

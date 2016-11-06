@@ -187,8 +187,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 	function obtenerParametros(){
 
 		var latitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('latitud').value;
-		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;
-		//alert('guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud);
+		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;		
 		document.getElementById('formCocinero').action = 'guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud;
 	}
 </script>
