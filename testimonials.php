@@ -16,30 +16,30 @@
                             <li>
                                 <div class="mu-testimonial-single">
                                     <div class="mu-testimonial-info">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                                        <p>Excelente aplicación! te permite conocer gente de diferentes partes del mundo, donde podes compartir una cena o almuerzo, especialidades de cada cocinero.Como también conocer diferentees culturas y costumbres.</p>
                                     </div>
                                     <div class="mu-testimonial-bio">
-                                        <p>- David Muller</p>
+                                        <p>- Juan Pereira</p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="mu-testimonial-single">
                                     <div class="mu-testimonial-info">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                                        <p>Muy rica la comida que ofrece la app.</p>
                                     </div>
                                     <div class="mu-testimonial-bio">
-                                        <p>- David Muller</p>
+                                        <p>- Mario Alfredo</p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="mu-testimonial-single">
                                     <div class="mu-testimonial-info">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                                        <p>Buena idea! Te permite conocer gente buena onda.</p>
                                     </div>
                                     <div class="mu-testimonial-bio">
-                                        <p>- David Muller</p>
+                                        <p>- Emanuel Chalela</p>
                                     </div>
                                 </div>
                             </li>

@@ -66,9 +66,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
 
 <!-- Start Gallery -->
-<!--<section id="mu-gallery">-->
-<!--<?php include 'gallery.php'; ?>--> 
-<!--</section>-->
+<section id="mu-gallery">
+    <?php include 'gallery.php'; ?>
+</section>
 <!-- End Gallery -->
 
 <!-- Start Client Testimonial section -->
@@ -78,8 +78,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <!-- End Client Testimonial section -->
 
 <!-- Start Subscription section -->
-<!-- <section id="mu-subscription">
-    <?php //include 'subscription.php';?>
+<!--<section id="mu-subscription">
+  //  <?php include 'subscription.php';?>
 </section>-->
 <!-- End Subscription section -->
 
