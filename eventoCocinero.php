@@ -13,11 +13,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="themes/readable/bootstrap.css">
-    <link rel="stylesheet" href="css/datepicker.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
+  
   <title>Yubercook | Home</title>
   <?php
   //include_once 'php/functions.php';
@@ -187,7 +183,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 	function obtenerParametros(){
 
 		var latitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('latitud').value;
-		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;		
+		var longitud = window.frames["mapaReferencia"].contentWindow.document.getElementById('longitud').value;
 		document.getElementById('formCocinero').action = 'guardarEventoCocinero.php?latitud=' + latitud + '&longitud=' + longitud;
 	}
 </script>

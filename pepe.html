@@ -65,9 +65,9 @@ function geocodeAddress(geocoder, resultsMap) {
         position: results[0].geometry.location
 
       });
-       console.log(results[0].geometry.location.lat());
-        console.log(results[0].geometry.location.lng());
-        
+      // console.log(results[0].geometry.location.lat());
+        //console.log(results[0].geometry.location.lng());
+
 		document.getElementById('latitud').value = results[0].geometry.location.lat();
 		document.getElementById('longitud').value = results[0].geometry.location.lng();
     } else {
