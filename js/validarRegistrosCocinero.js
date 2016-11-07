@@ -4,6 +4,8 @@ function validarRegistroCocinero(){
 	var fechaN = document.getElementById("fecha").value;
 	//var genero = document.getElementByName("genero[]");
 	var genero=document.forms["formularioCocinero"]["genero"];
+  var phone = "^[0-9\\-\\+]{9,15}$";
+//	var especialidades = document.forms["formularioCocinero"]["especialidad"];
 	ok = true;
 	if(ok && nombre.value==""){
 			ok=false;
@@ -34,12 +36,12 @@ function validarRegistroCocinero(){
       //alert("Debe ingresar contraseñas iguales.");
       $('#passwordEqualsAlertCocinero').show();
       confirmaPassword.focus();
-    } else if(ok && telefono.value == null){
+    } else if(ok && !telefono.value.match(phone)){
       ok = false;
       //alert("Debe ingresar contraseñas iguales.");
       $('#telefonoAlertCocinero').show();
       telefono.focus();
-    } else if(ok && (idioma.value == null)){
+    } else if(ok && (languages== "")){
 			//if(ok && (languages[0] == null || languages[0] = "") ){
 			ok = false;
 			//alert("Debe ingresar un idioma.");
@@ -50,12 +52,16 @@ function validarRegistroCocinero(){
 			//alert("Debe seleccionar una fecha de nacimiento.");
       $('#fechaAlertCocinero').show();
 			fecha.focus();
-		} else if( ok && genero.checked == 'undefined') {
+		} else if( ok && !document.getElementById('generoM').checked && !document.getElementById('generoF').checked) {
       ok = false;
       //alert("Debe seleccionar género masculino o femenino.");
       $('#generoAlertCocinero').show();
       generoM.focus();
-    }
+    }else if( ok && especialidad.value == "" ){
+			ok = false;
+			$('#especialidadAlertCocinero').show();
+      especialidad.focus();
+		}
 		if(ok){
       document.forms["formularioCocinero"].submit();
 		}else{console.log("error");}

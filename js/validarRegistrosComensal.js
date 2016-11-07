@@ -1,5 +1,7 @@
 function validarRegistroComensal(){
 	var genero=document.forms["formularioComensal"]["genero"];
+	//var tel = document.getElementById("telefono").value;
+
 	debugger;
 	ok = true;
 		if(ok && nombre.value==""){
@@ -8,13 +10,13 @@ function validarRegistroComensal(){
 		$('#nombreAlertComensal').show();
 			nombre.focus();
 		}
-    if(ok && apellido.value==""){
+     if(ok && apellido.value==""){
 			ok=false;
 		//	alert("Debe ingresar su apellido.");
 		$('#apellidoAlertComensal').show();
 			apellido.focus();
 		}
-    if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
+     if(ok && inputEmail.value=="" && validarEmail(inputEmail.value) == false){
 			ok=false;
 		//	alert("Debe ingresar su correo electrónico.");
 		$('#inputEmailAlertComensal').show();
@@ -26,26 +28,27 @@ function validarRegistroComensal(){
 			$('#inputPasswordAlertComensal').show();
 			inputPassword.focus();
 		}
-    if(ok && confirmaPassword.value==""){
+     if(ok && confirmaPassword.value==""){
 			ok=false;
 			//alert("Debe ingresar su contraseña.");
 			$('#confirmaPasswordAlertComensal').show();
 			confirmaPassword.focus();
 		}
-    if(ok && inputPassword.value != confirmaPassword.value){
+     if(ok && inputPassword.value != confirmaPassword.value){
       ok = false;
       //alert("Debe ingresar contraseñas iguales.");
 			$('#passwordEqualsAlertComensal').show();
 			confirmaPassword.focus();
     }
-    if(ok && telefono.value == null){
+		var phone = "^[0-9\\-\\+]{9,15}$";
+     if(ok && !telefono.value.match(phone)){
       ok = false;
       //alert("Debe ingresar contraseñas iguales.");
 			$('#telefonoAlertComensal').show();
 			telefono.focus();
     }
 		var languages=document.forms["formularioComensal"]["idiomas[]"].value;
-		if(ok && (idioma.value == null)){
+	  if(ok && (languages== "")){
 		//if(ok && (languages == null || languages = "") ){
 			ok = false;
 			//alert("Debe ingresar un idioma.");
@@ -53,14 +56,14 @@ function validarRegistroComensal(){
 			idioma.focus();
 		}
 		fechaN = document.getElementById("fechaid").value;
-		if (ok && fechaN == ""){
+	   if (ok && fechaN == ""){
 			ok = false;
 			//alert("Debe seleccionar una fecha de nacimiento.");
 			$('#fechaAlertComensal').show();
 			fecha.focus();
 		}
 
-    if( ok && genero.checked == 'undefined') {
+    if( ok && !document.getElementById('generoM').checked && !document.getElementById('generoF').checked) {
       ok = false;
       //alert("Debe seleccionar género masculino o femenino.");
 			$('#generoAlertComensal').show();

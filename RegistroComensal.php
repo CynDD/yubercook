@@ -37,10 +37,26 @@
                 <input type="text" class="form-control" id="nombre" name ="nombre" placeholder="Nombre">
               </div>
             </div>
+            <div class="form-group" >
+              <div id="prueba" class="col-md-3">
+              </div>
+             <div id = "nombreAlertComensal"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+            <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+            <strong>Atención!</strong> Debe ingresar su nombre.
+          </div>
+      			</div>
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white" >Apellido:</label>
               <div class="col-md-8">
                 <input type="text" class="form-control" id="apellido" name ="apellido" placeholder="Apellido">
+              </div>
+            </div>
+            <div class="form-group" >
+              <div  class="col-md-3">
+              </div>
+              <div id = "apellidoAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Debe ingresar su apellido.
               </div>
             </div>
             <div class="form-group">
@@ -49,16 +65,44 @@
                 <input type="email" class="form-control" id="inputEmail" name ="inputEmail" placeholder="Email">
               </div>
             </div>
+            <div class="form-group" >
+              <div  class="col-md-3">
+              </div>
+              <div id = "inputEmailAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Debe ingresar su correo electrónico.
+              </div>
+            </div>
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white">Contraseña:</label>
               <div class="col-md-8">
                 <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Contraseña">
               </div>
             </div>
+            <div class="form-group" >
+              <div  class="col-md-3">
+              </div>
+              <div id = "inputPasswordAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Debe ingresar su contraseña.
+            </div>
+            </div>
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white">Confirmar Contraseña:</label>
               <div class="col-md-8">
                 <input type="password" class="form-control" id="confirmaPassword" name ="confirmaPassword"  placeholder="Confirmar Contraseña">
+              </div>
+            </div>
+            <div class="form-group" >
+              <div  class="col-md-3">
+              </div>
+              <div id = "confirmaPasswordAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Debe ingresar su confirmación de contraseña.
+              </div>
+              <div id = "passwordEqualsAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Las contraseñas deben coincidir.
               </div>
             </div>
             <div class="form-group">
@@ -67,6 +111,15 @@
                 <input type="tel" class="form-control" id="telefono" name ="telefono" placeholder="Telefono">
               </div>
             </div>
+            <div class="form-group" >
+              <div  class="col-md-3">
+              </div>
+              <div id = "telefonoAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+                <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+                <strong>Atención!</strong> Debe ingresar su telefono.
+              </div>
+            </div>
+
             <div class="form-group">
             <label class="control-label col-md-3" style="color: white">Idiomas:</label>
             <div class="col-md-8">
@@ -79,6 +132,14 @@
           </select>
         </div>
       </div>
+      <div class="form-group" >
+        <div  class="col-md-3">
+        </div>
+      <div id = "idiomaAlertComensal" class = "col-md-4 alert alert-warning" role="alert" hidden = "true">
+          <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+          <strong>Atención!</strong> Debe seleccionar al menos un idioma.
+        </div>
+      </div>
       <div class="form-group">
              <div class="form-group">
                <label class="control-label col-md-3" style="color: white">Fecha:</label></br>
@@ -88,6 +149,14 @@
                </div>
              </div>
            </div>
+           <div class="form-group" >
+             <div  class="col-md-3">
+             </div>
+           <div id = "fechaAlertComesal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+          <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+          <strong>Atención!</strong> Debe ingresar su fecha de nacimiento.
+        </div>
+      </div>
 
            <div class="form-group">
                <label class="control-label col-md-3" style="color: white">Género:</label>
@@ -101,6 +170,14 @@
                        <input id="generoF" type="radio" name="genero" value="femenino"> Femenino
                    </label>
                </div>
+           </div>
+           <div class="form-group" >
+             <div  class="col-md-3">
+             </div>
+             <div id = "generoAlertComensal" class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+           <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+           <strong>Atención!</strong> Debe ingresar su género
+           </div>
            </div>
 <br>
 <div class="form-group">
