@@ -33,11 +33,13 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idevento = $_GET["idevento"];
 
 
-  $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, e.aptoCeliaco, e.fecha FROM evento e
-              inner join comida c on c.idcomida = e.idcomida
-              inner join usuario u on u.idusuario = e.idcocinero
+  $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, 
+				e.aptoCeliaco, e.fecha, c.idcomida
+				FROM evento e
+					inner join comida c on c.idcomida = e.idcomida
+					inner join usuario u on u.idusuario = e.idcocinero
 			        inner join ubicacion ub on ub.idubicacion = e.idubicacion
-              where idevento = ".$idevento;
+				WHERE idevento = ".$idevento;
   //echo $sqlCont;
   $resultCont = mysql_query($sqlCont,$conex);
   $reg = mysql_fetch_array($resultCont);
@@ -53,7 +55,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $apto ="$reg[aptoCeliaco]";
   $latitud="$reg[latitud]";
   $longitud="$reg[longitud]";
-
+  $idcomida="$reg[idcomida]";
 ?>
 <section id="mu-registro">
   <div id="formulario" style = "padding-left:15px";>
@@ -86,7 +88,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white" >Imagen:</label>
           <div class="col-md-8">
-              <img     type="file" accept="image/*"> <?php echo $imagen;?> </img>
+              <?php echo '<img src="blob.php?id=' . $idcomida . '" alt="Img" />'; ?>
           </div>
 
         </div>
@@ -154,7 +156,6 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
 <script type="text/javascript">
 	function cargarPunto(){
-		debugger;
 		var lat = document.getElementById('latitud').value;
 		var lon = document.getElementById('longitud').value;
 		window.frames["mapaReferencia"].contentWindow.geocodeLatLng(lat,lon);

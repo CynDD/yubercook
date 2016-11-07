@@ -77,7 +77,6 @@ function geocodeAddress(geocoder, resultsMap) {
 }
 
 function geocodeLatLng(lat, lon) {
-  debugger;
   var latlng = {lat: parseFloat(lat), lng: parseFloat(lon)};
   geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
