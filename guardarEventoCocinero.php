@@ -79,6 +79,7 @@
 		 $cantMaxPersonas = $_POST["cantMaxPersonas"];
 		 $aptoCeliacos = $_POST["aptoCeliacos"];
 		 $fechaHora = $_POST["inicioComida"];
+		 $fechafin = $_POST["finComida"];
 		 $latitud=	$_GET["latitud"];
 		 $longitud=	$_GET["longitud"];
 
@@ -121,8 +122,8 @@
 			$regUbi = mysql_fetch_array($resultUbi);
 
 			//Se insertan los datos del evento en la tabla Evento
-			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
-						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
+			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,fechafin,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
+						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."','".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechafin)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
 			echo $sqlinsevento;
 			$result = mysql_query($sqlinsevento,$conex);
 

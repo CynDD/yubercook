@@ -130,7 +130,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
               <label class="control-label col-md-3" style="color: white">Fin:</label></br>
               <div class="col-md-3">
                 <div class='input-group date' id='finComida'>
-                  <input type='text' class="form-control" />
+                  <input type='text' class="form-control" name='finComida' id='finComida' />
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
