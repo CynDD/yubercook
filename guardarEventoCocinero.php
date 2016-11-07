@@ -121,12 +121,12 @@
 			$regUbi = mysql_fetch_array($resultUbi);
 
 			//Se insertan los datos del evento en la tabla Evento
-			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco)
-						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."')";
+			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
+						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
 			echo $sqlinsevento;
 			$result = mysql_query($sqlinsevento,$conex);
 
-			header('Location: home.php?');
+			header('Location: homeCocinero.php?');
     ?>
 
 </body>

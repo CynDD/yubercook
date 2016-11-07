@@ -19,7 +19,7 @@
                 <li><a href="#mu-meals">Comidas cerca de ti</a></li>
                 <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>
                 <li><a href="#mu-gallery">Galería</a></li>
-                <li><a href="#mu-chef">Cocineros</a></li>
+                <li><a href="">Cocineros</a></li>
                 <li><a href="contact.php">Contacto</a></li>
                 <li><a href="logout.php"><b>Salir</b></a></li>
             </ul>

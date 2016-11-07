@@ -8,6 +8,7 @@ function llenarTabla(tablaEventoJson) {
           "<th class=\"text-center\"><span>Fecha</span></th>" +
 		  "<th class=\"text-center\"><span>Precio</span></th>" +
           "<th class=\"text-center\"><span>Nombre cocinero</span></th>" +
+		  "<th class=\"text-center\"><span>Cupos vendidos</span></th>" +
           "<th class=\"text-center\"><span>Cant Minima</span></th>" +
           "<th class=\"text-center\"><span>Cant Maxima</span></th>" +
         "</tr></thead><tbody>";
@@ -22,6 +23,8 @@ function llenarTabla(tablaEventoJson) {
         "</td><td class=\"text-center\">" +
         "<a href=\"detalleCocinero.php?idcocinero=" + tablaEventoCocinero[i].idcocinero + "\">" + tablaEventoCocinero[i].nombre +
         "</td><td class=\"text-center\">" +
+        tablaEventoCocinero[i].cantcomensales +
+		"</td><td class=\"text-center\">" +
         tablaEventoCocinero[i].cantminpersonas +
 		"</td><td class=\"text-center\">" +
         tablaEventoCocinero[i].cantmaxpersonas +
