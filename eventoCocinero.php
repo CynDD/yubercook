@@ -13,7 +13,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  
+
   <title>Yubercook | Home</title>
   <?php
   //include_once 'php/functions.php';
@@ -24,7 +24,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <body>
 
   <header id="mu-header">
-    <?php include 'menu.php';?>
+    <?php include 'menu_Cocinero.php';?>
   </header>
   <!-- Start slider  -->
   <section id="mu-slider">
@@ -67,12 +67,6 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <input type="text" class="form-control" id="inputPrecio" name ="inputPrecio" placeholder="Precio $U">
           </div>
         </div>
-       <!-- <div class="form-group">
-          <label class="control-label col-md-3" style="color: white">Ubicación de la comida:</label>
-          <div class="col-md-8">
-            <input type="text" class="form-control" id="inputUbicacion" name="inputUbicacion" placeholder="Ubicación de la comida">
-          </div>
-        </div> -->
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Descripción de la comida:</label>
           <div class="col-md-8">
@@ -150,18 +144,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         </div>
 
 
-        <br>
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-9" align="right">
-            <!-- <button type="reset" class="mu-reset-btn">Limpiar datos</button>
-            <button type="submit" class="mu-send-btn" onsubmit="return validarEventoCocinero()">Crear comida</button> -->
 
-            <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
-            <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
-                    	<input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-
-                      <button type="submit" class="mu-readmore-btn">Crear comida</button>
-          </div>
 		   <!-- Start Map section -->
 		   <div class="form-group">
 				<section id="mu-map">
@@ -170,6 +153,19 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 				</section>
 			</div>
 		<!-- End Map section -->
+
+    <br>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-9" align="right">
+        <!-- <button type="reset" class="mu-reset-btn">Limpiar datos</button>
+        <button type="submit" class="mu-send-btn" onsubmit="return validarEventoCocinero()">Crear comida</button> -->
+
+        <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
+        <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
+                  <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
+
+                  <button type="submit" class="mu-readmore-btn">Crear comida</button>
+      </div>
         </form>
       </div>
 

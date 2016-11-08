@@ -13,17 +13,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-                 <li><a href="eventoCocinero.php#mu-registro">Crear evento</a></li>
-
+              <li><a href="#"><?php echo "<b>Bienvenido " . $_SESSION["fullname"] . "!</b>"; ?></a></li>
+                <li><a href="eventoCocinero.php#mu-registro">Crear evento</a></li>
                 <li><a href="#mu-about-us">Nosotros</a></li>
                 <li><a href="#mu-restaurant-menu">Menú</a></li>
+                <li><a href="eventosDelCocinero.php#tablaEventoCocinero">Mis eventos</a></li>
                 <li><a href="#mu-meals">Comidas cerca de ti</a></li>
-                <li><a href="#mu-gallery">Galería</a></li>
-                <li><a href="#mu-chef">Cocineros</a></li>
                 <li><a href="contact.php">Contacto</a></li>
+                <li><a href="#mu-gallery">Galería</a></li>
                 <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>
-
-              <li><a href="logout.php"><b>Salir</b></a></li>
+               <li><a href="logout.php"><b>Salir</b></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

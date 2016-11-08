@@ -26,8 +26,12 @@
       //$sqllogin ="INSERT INTO status(fecha,userid,statuscol) VALUES (NOW(),'".$idusuario."','".$statuscol."')";
       //$resultCont = mysql_query($sqllogin,$conex);
 		$_SESSION["idusuario"] = $idusuario;
-       $_SESSION["statuscol"] = $statuscol;
-       if($idrol ==1){
+     $_SESSION["statuscol"] = $statuscol;
+
+     if ($idrol==1 && $idrol==2){
+
+       header('Location:home');
+     }else if($idrol ==1){
 
         header('Location: homeCocinero.php?');
       }else if($idrol ==2){
