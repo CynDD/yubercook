@@ -6,30 +6,30 @@
                     <ul class="mu-counter-nav">
                         <li class="col-md-3 col-sm-3 col-xs-12">
                             <div class="mu-single-counter">
-                                <span>Fresh</span>
+                                <span>Liviano</span>
                                 <h3><span class="counter">55</span><sup>+</sup></h3>
-                                <p>Breakfast Items</p>
+                                <p>Desayuno</p>
                             </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
                             <div class="mu-single-counter">
-                                <span>Delicious</span>
+                                <span>Delicioso</span>
                                 <h3><span class="counter">130</span><sup>+</sup></h3>
-                                <p>Lunch Items</p>
+                                <p>Almuerzo</p>
                             </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
                             <div class="mu-single-counter">
-                                <span>Hot</span>
+                                <span>Caliente</span>
                                 <h3><span class="counter">35</span><sup>+</sup></h3>
-                                <p>Coffee Items</p>
+                                <p>Merienda</p>
                             </div>
                         </li>
                         <li class="col-md-3 col-sm-3 col-xs-12">
                             <div class="mu-single-counter">
-                                <span>Satisfied</span>
+                                <span>Satisfechos</span>
                                 <h3><span class="counter">3562</span><sup>+</sup></h3>
-                                <p>Customers</p>
+                                <p>Usuarios</p>
                             </div>
                         </li>
                     </ul>
