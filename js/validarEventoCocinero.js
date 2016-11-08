@@ -3,35 +3,41 @@ function validarEventoCocinero(){
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
-			alert("Debe escribir el nombre de la comida");
+			$('#nombreAlertComida').show();
 			nombreComida.focus();
+		}
+		if (ok && imagenComida.value == null){
+			ok = false;
+			$('#imagenAlertComida').show();
+			imagenComida.focus();
 		}
     precioComida = document.getElementById("inputPrecio").value;
 		if(ok && isNaN(precioComida)){
 			ok=false;
-			alert("Debe escribir un precio de la comida");
+			$('#precioAlertComida').show();
 			inputPrecio.focus();
 		}
 		if (ok && inputUbicacion.value==""){
       ok = false;
-      alert("Debe escribir la ubicación de la comida.");
+      $('#ubicacionAlertComida').show();
       inputUbicacion.focus();
     }
     if (ok && descripcionComida.value == ""){
       ok = false;
-      alert("Debe escribir la descripción de la comida.");
-      descripcionComida.focus();
+      $('#descriocionAlertComida').show();
+			descripcionComida.focus();
     }
     cantidadMinima = document.getElementById("cantMinPersonas").value;
 		if(ok && isNaN(cantidadMinima)){
 			ok=false;
+			$('#cantMinAlertComida').show();
 			alert("Debe escribir una cantidad mínima de personas para que el evento se realice.");
 			cantMinPersonas.focus();
 		}
     cantidadMaxima = document.getElementById("cantMaxPersonas").value;
 		if(ok && isNaN(cantidadMinima)){
 			ok=false;
-			alert("Debe escribir una cantidad máxima de personas que puedan asistir al evento.");
+			$('#cantMaxAlertComida').show();
 			cantMaxPersonas.focus();
 		}
     aptoParaCeliacos = document.getElementByName("aptoCeliacos[]");

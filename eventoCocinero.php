@@ -13,8 +13,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  
-  <title>Yubercook | Home</title>
+
+  <title>Yubercook | Evento del Cocinero</title>
   <?php
   //include_once 'php/functions.php';
   include 'styles.php';
@@ -55,11 +55,27 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <input type="text" class="form-control" id="nombreComida" name ="nombre" placeholder="Nombre de la comida">
           </div>
         </div>
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "nombreAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar el nombre de la comida.
+      </div>
+        </div>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Imagen:</label>
           <div class="col-md-8">
             <input type="file" accept="image/*" name="imagenComida" id="imagenComida" /><br><br>
           </div>
+        </div>
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "imagenAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar la imagen de la comida.
+      </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Precio $U :</label>
@@ -67,17 +83,27 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <input type="text" class="form-control" id="inputPrecio" name ="inputPrecio" placeholder="Precio $U">
           </div>
         </div>
-       <!-- <div class="form-group">
-          <label class="control-label col-md-3" style="color: white">Ubicación de la comida:</label>
-          <div class="col-md-8">
-            <input type="text" class="form-control" id="inputUbicacion" name="inputUbicacion" placeholder="Ubicación de la comida">
+        <div class="form-group" >
+          <div class="col-md-3">
           </div>
-        </div> -->
+      <div id = "inputPrecioAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar el precio de la comida.
+      </div>
+       </div>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Descripción de la comida:</label>
           <div class="col-md-8">
             <textarea rows="3" class="form-control" id="descripcionComida" name ="descripcionComida" placeholder="Descripción de la comida"></textarea>
           </div>
+        </div>
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "descripcionAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar la descripción de la comida..
+      </div>
         </div>
 
         <div class="form-group">
@@ -86,28 +112,29 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <input type="number" class="form-control" id="cantMinPersonas" name ="cantMinPersonas" placeholder="Cantidad mínima de personas">
           </div>
         </div>
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "cantMinAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar la cantidad mínima para ver la oferta.
+      </div>
+        </div>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white" >Cantidad máxima de personas</label>
           <div class="col-md-8">
             <input type="number" class="form-control" id="cantMaxPersonas" name ="cantMaxPersonas" placeholder="Cantidad máxima de personas">
           </div>
         </div>
-        <!-- <div class="form-group">
-          <label class="control-label col-md-3" style="color:white">Fecha y hora:</label>
-            <div type="text" class="input-append date" >
-                <input  id="datetimepicker" name="datetimepicker" ></input>
-                  <span class="add-on">
-                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-                  </span>
-            </div>
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "cantMaxAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe ingresar el nombre de la comida.
+           </div>
         </div>
-            <script type="text/javascript">
-                $('#datetimepicker').datetimepicker({
-                format: 'dd/MM/yyyy hh:mm:ss',
-                language: 'pt-BR'
-               });
-            </script>
-        </div> -->
+
         <div class="form-group">
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white" for="inicioComida">Inicio:</label></br>
@@ -121,6 +148,15 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
               </div>
             </div>
           </div>
+          <div class="form-group" >
+            <div class="col-md-3">
+            </div>
+        <div id = "inicioAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+          <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+          <strong>Atención!</strong> Debe ingresar el inicio de la comida.
+             </div>
+          </div>
+
           <div class="form-group">
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white">Fin:</label></br>
@@ -133,6 +169,14 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="form-group" >
+            <div class="col-md-3">
+            </div>
+        <div id = "finAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+          <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+          <strong>Atención!</strong> Debe ingresar el fin de la comida.
+             </div>
           </div>
 
         <div class="form-group">
@@ -148,19 +192,21 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             </label>
           </div>
         </div>
-
-
+        <div class="form-group" >
+          <div class="col-md-3">
+          </div>
+      <div id = "aptoCeliacosAlertComida"  class = "col-md-8 alert alert-warning" role="alert" hidden = "true">
+        <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+        <strong>Atención!</strong> Debe seleccionar si la comida es apta para celíacos.
+           </div>
+        </div>
         <br>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-9" align="right">
-            <!-- <button type="reset" class="mu-reset-btn">Limpiar datos</button>
-            <button type="submit" class="mu-send-btn" onsubmit="return validarEventoCocinero()">Crear comida</button> -->
-
-            <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
             <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                     	<input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
 
-                      <button type="submit" class="mu-readmore-btn">Crear comida</button>
+                      <button type="button" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
           </div>
 		   <!-- Start Map section -->
 		   <div class="form-group">
