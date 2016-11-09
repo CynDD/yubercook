@@ -21,19 +21,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 </head>
 <body onload="cargarPunto()">
 
-  <header id="mu-header">
-	   <?php if ($idrol == 2){
-		   include 'menu_Comensal.php';
-	   } else if ($idrol == 1){
-		include 'menu_Cocinero.php';   
-	   } else {
-		   echo "Error en el id de rol."
-	   }?>
-	   
-	   
-  </header>
   
-
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
 
@@ -67,6 +55,17 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idcomida="$reg[idcomida]";
   $idrol="$reg[idrol]";
 ?>
+<header id="mu-header">
+	   <?php if ($idrol == 2){
+		   include 'menu_Comensal.php';
+	   } else if ($idrol == 1){
+			include 'menu_Cocinero.php';   
+	   } else {
+		   echo "Error en el id de rol.";
+	   }?>	   
+  </header>
+  
+
 <section id="mu-registro">
   <div id="formulario" style = "padding-left:15px";>
 
