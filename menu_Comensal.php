@@ -15,10 +15,9 @@
             <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
                 <li><a href="#"><?php echo "<b>Bienvenido " . $_SESSION["fullname"] . "!</b>"; ?></a></li>
                 <li><a href="#mu-about-us">Nosotros</a></li>
-                <li><a href="#mu-restaurant-menu">Menú</a></li>
+				<li><a href="eventosDelComensal.php#latabla" target="_blank">Eventos comprados</a></li>
                 <li><a href="#mu-meals">Comidas cerca de ti</a></li>
                 <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>
-                <li><a href="#mu-gallery">Galería</a></li>
                 <li><a href="">Cocineros</a></li>
                 <li><a href="contact.php">Contacto</a></li>
                 <li><a href="logout.php"><b>Salir</b></a></li>

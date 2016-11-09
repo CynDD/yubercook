@@ -22,7 +22,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <body onload="cargarPunto()">
 
   <header id="mu-header">
-    <?php include 'menu.php';?>
+    <?php include 'menu_Comensal.php';?>
   </header>
   
 
@@ -44,8 +44,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $resultCont = mysql_query($sqlCont,$conex);
   $reg = mysql_fetch_array($resultCont);
 
-  $idusuario = "  $reg[idusuario]";
-  $nombre = "  $reg[nombreComida]";
+	$idusuario=$_SESSION["idusuario"]; //Para que se almacene en idusuario el id del usuario que este logueado
+  //$idusuario = "  $reg[idusuario]";
+	$nombre = "  $reg[nombreComida]";
   $descripcion  = "$reg[descripcion]";
   $imagen  = "$reg[imagen]";
   $precio = " $reg[precio]";

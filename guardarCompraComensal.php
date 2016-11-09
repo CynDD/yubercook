@@ -69,22 +69,27 @@
 <body>
 
   <?php
-		 $idevento = $_POST["idevento"];
-		 $idusuario = $_POST["idusuario"];
+		session_start();
+		$idusuario=$_SESSION["idusuario"];
+		echo "El id del comensal es: ".$idusuario;
+		$idevento = $_POST["idevento"];
+		//$idusuarioConsulta = $_POST["idusuario"];
 		 
 
 
 		 include'conexion.php';
 		 //Inserta un nuevo registro en tabla usuario, con los datos del nuevo cocinero
-		 echo $idevento;
-		 echo $idusuario;
+		 //echo $idevento;
+		 //echo $idusuario;
 			
 			//Si quedan cupos en el evento se procede a almacenar
-			$sqlev = "SELECT cantcomensales,cantmaxpersonas FROM evento WHERE idcocinero=".$idusuario." and idevento=".$idevento;
+			$sqlev = "SELECT cantcomensales,cantmaxpersonas FROM evento WHERE idevento=".$idevento;
 			echo $sqlev;
 			$resultControl = mysql_query($sqlev,$conex);
 			$regControl = mysql_fetch_array($resultControl);
 			
+			echo "Cantidad de comensales: ".$regControl['cantcomensales'];
+			echo "/n Cantidad de maxima de personas: ".$regControl['cantmaxpersonas'];
 			if($regControl['cantcomensales']<$regControl['cantmaxpersonas']){
 				//Se insertan los datos del evento en la tabla Evento
 				$sqlinsevento ="INSERT INTO comensalevento(idusuario,idevento)
@@ -94,11 +99,12 @@
 				
 				//Se actualiza la cantidad de comensales en tabla Evento
 				$sqlupdevento ="UPDATE evento SET cantcomensales=(cantcomensales+1)
-								WHERE idcocinero=".$idusuario." and idevento=".$idevento." and cantcomensales<cantmaxpersonas)";
+								WHERE idevento=".$idevento
+								." and ".$regControl['cantcomensales']." < ".$regControl['cantmaxpersonas'];
 				echo $sqlupdevento;
 				$result = mysql_query($sqlupdevento,$conex);
 			}
-			//header('Location: home.php?');
+			header('Location: homeComensal.php?');
     ?>
 
 </body>
