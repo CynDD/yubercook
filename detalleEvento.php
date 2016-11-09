@@ -34,7 +34,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
 
   $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, 
-				e.aptoCeliaco, e.fecha, c.idcomida
+				e.aptoCeliaco, e.fecha, c.idcomida, u.idrol
 				FROM evento e
 					inner join comida c on c.idcomida = e.idcomida
 					inner join usuario u on u.idusuario = e.idcocinero
@@ -57,6 +57,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $latitud="$reg[latitud]";
   $longitud="$reg[longitud]";
   $idcomida="$reg[idcomida]";
+  $idrol="$reg[idrol]";
 ?>
 <section id="mu-registro">
   <div id="formulario" style = "padding-left:15px";>
@@ -142,7 +143,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 				</section>
 			</div>
 		<!-- End Map section -->
-		      <?php if($_SESSION["idrol"] == 2):?>
+		      <?php if($idrol == 2):?>
 		<div class="form-group">
 			<button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
 		</div>
