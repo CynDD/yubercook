@@ -22,7 +22,15 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <body onload="cargarPunto()">
 
   <header id="mu-header">
-    <?php include 'menu_Comensal.php';?>
+	   <?php if ($idrol == 2){
+		   include 'menu_Comensal.php';
+	   } else if ($idrol == 1){
+		include 'menu_Cocinero.php';   
+	   } else {
+		   echo "Error en el id de rol."
+	   }?>
+	   
+	   
   </header>
   
 
