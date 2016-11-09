@@ -71,7 +71,7 @@
   <?php
 		 session_start();
 		 $idcocinero=$_SESSION["idusuario"];
-		 
+
 		 $nombre = $_POST["nombre"];
 		 $inputPrecio = $_POST["inputPrecio"];
 		 $descripcionComida = $_POST["descripcionComida"];
@@ -123,7 +123,8 @@
 
 			//Se insertan los datos del evento en la tabla Evento
 			$sqlinsevento ="INSERT INTO evento (idcocinero,idcomida,fecha,fechafin,precio,idubicacion,cantmaxpersonas,cantminpersonas,aptoCeliaco,cantcomensales)
-						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."','".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechafin)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
+						VALUES (".$idcocinero.",".$reg1['idcomida'].",'".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechaHora)))."',
+            '".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechafin)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
 			echo $sqlinsevento;
 			$result = mysql_query($sqlinsevento,$conex);
 

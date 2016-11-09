@@ -1,63 +1,62 @@
 function validarEventoCocinero(){
-	//debugger;
+//	debugger;
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
 			$('#nombreAlertComida').show();
 			nombreComida.focus();
 		}
-		if (ok && imagenComida.value == null){
+		if (ok && imagenComida.checked == false){
 			ok = false;
 			$('#imagenAlertComida').show();
 			imagenComida.focus();
 		}
     precioComida = document.getElementById("inputPrecio").value;
-		if(ok && isNaN(precioComida)){
+		if(ok && precioComida == ""){
 			ok=false;
-			$('#precioAlertComida').show();
+			$('#inputPrecioAlertComida').show();
 			inputPrecio.focus();
 		}
-		if (ok && inputUbicacion.value==""){
-      ok = false;
-      $('#ubicacionAlertComida').show();
-      inputUbicacion.focus();
-    }
+
     if (ok && descripcionComida.value == ""){
       ok = false;
-      $('#descriocionAlertComida').show();
+      $('#descripcionAlertComida').show();
 			descripcionComida.focus();
     }
     cantidadMinima = document.getElementById("cantMinPersonas").value;
-		if(ok && isNaN(cantidadMinima)){
+		if(ok && cantidadMinima == ""){
 			ok=false;
 			$('#cantMinAlertComida').show();
-			alert("Debe escribir una cantidad mínima de personas para que el evento se realice.");
-			cantMinPersonas.focus();
+		 cantMinPersonas.focus();
 		}
     cantidadMaxima = document.getElementById("cantMaxPersonas").value;
-		if(ok && isNaN(cantidadMinima)){
+		if(ok && cantidadMaxima == ""){
 			ok=false;
 			$('#cantMaxAlertComida').show();
 			cantMaxPersonas.focus();
 		}
-    aptoParaCeliacos = document.getElementByName("aptoCeliacos[]");
-    if( !aptoParaCeliacos[0].checked && !aptoParaCeliacos[1].checked) {
+
+		inicio = document.getElementById("inicioComida").value;
+		if (ok && inicio == "" || inicio == undefined){
+			ok = false;
+			$('#inicioAlertComida').show();
+			inicioComida.focus();
+		}
+		fin = document.getElementById("finComida").value;
+		if (ok && fin == "" || fin == undefined){
+			ok = false;
+			$('#finAlertComida').show();
+			finComida.focus();
+		}
+		//aptoParaCeliacos = document.getElementByName("aptoCeliacos");
+		if( ok && !document.getElementById('Si').checked && !document.getElementById('No').checked) {
+
       ok = false;
-      alert("Debe seleccionar si su comida es apta para celíacos o no.");
-      aptoCeliacosSi.focus();
+			$('#aptoCeliacosAlertComida').show();
+      Si.focus();
     }
-		fecha = document.getElementById("fechaComida").value;
-		if (ok && fecha == ""){
-			ok = false;
-			alert("Debe seleccionar una fecha para la comida.");
-			fecha.focus();
-		}
-		hora = document.getElementById("horaComida").value;
-		if (ok && hora == "" ){
-			ok = false;
-			alert("Debe escribir una hora de la comida.");
-			hora.focus();
-		}
-		if(ok){ submit();
-		}
+		if(ok){
+			document.forms["formCocinero"].submit();
+	  	}
+			else{console.log("error");}
 	}

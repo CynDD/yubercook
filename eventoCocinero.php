@@ -82,7 +82,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <div class="form-group">
           <label class="control-label col-md-3" style="color: white">Precio $U :</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="inputPrecio" name ="inputPrecio" placeholder="Precio $U">
+            <input type="number" class="form-control" id="inputPrecio" name ="inputPrecio" placeholder="Precio $U">
           </div>
         </div>
 
@@ -143,7 +143,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white" for="inicioComida">Inicio:</label></br>
               <div class="col-md-3">
-                <div class='input-group date' id='inicioComida' >
+                <div class='input-group date' id='inicioComidaCalendar'  >
                   <input type='text' class="form-control" name='inicioComida' id='inicioComida'/>
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar" for=""></span>
@@ -165,7 +165,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white">Fin:</label></br>
               <div class="col-md-3">
-                <div class='input-group date' id='finComida'>
+                <div class='input-group date' id='finComidaCalendar'  >
                   <input type='text' class="form-control" name='finComida' id='finComida' />
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
@@ -187,12 +187,12 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
           <label class="control-label col-md-3" style="color: white" >Apto para celíacos:</label>
           <div class="col-md-2">
             <label class="radio-inline" style="color: white">
-              <input type="radio" name="aptoCeliacos" value="si"> Si
+              <input id="Si" type="radio" name="aptoCeliacos" value="si"> Si
             </label>
           </div>
           <div class="col-md-2">
             <label class="radio-inline"  style="color: white">
-              <input type="radio" name="aptoCeliacos" value="no" > No
+              <input id = "No" type="radio" name="aptoCeliacos" value="no" > No
             </label>
           </div>
         </div>
@@ -206,13 +206,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
            </div>
         </div>
         <br>
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-9" align="right">
-            <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
-                    	<input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
 
-                      <button type="button" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
-          </div>
 
 		   <!-- Start Map section -->
 		   <div class="form-group">
@@ -232,8 +226,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
         <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                   <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-
-                  <button type="submit" class="mu-readmore-btn">Crear comida</button>
+     <button type="submit" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
+                  <!--<button type="button" onclick="return validarEventoCocinero()" class="mu-readmore-btn">Crear comida</button>-->
       </div>
         </form>
       </div>
