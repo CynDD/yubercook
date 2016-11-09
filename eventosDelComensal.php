@@ -41,9 +41,9 @@ select e.idevento, c.nombreComida, e.fecha, e.cantminpersonas, e.cantmaxpersonas
 from evento e, comida c
 where e.idcomida = c.idcomida and idcocinero = 1;
 */
-  $sqlCont = "SELECT e.idevento,c.nombreComida, e.precio, e.fecha, e.cantminpersonas, e.cantmaxpersonas, e.cantcomensales
-                FROM comensalevento ce, evento e, comida c
-              where ce.idevento=e.idevento and c.idcomida=e.idcomida and ce.idusuario=".$idcomensal ;
+  $sqlCont = "SELECT e.idevento,c.nombreComida, e.precio, e.fecha, e.cantminpersonas, e.cantmaxpersonas, e.cantcomensales, u.idrol
+                FROM comensalevento ce, evento e, comida c, usuario u
+              where ce.idevento=e.idevento and c.idcomida=e.idcomida and ce.idusuario = u.idusuario and ce.idusuario=".$idcomensal ;
 
   $resultCont = mysql_query($sqlCont,$conex);
   if ($resultCont){
@@ -56,7 +56,7 @@ where e.idcomida = c.idcomida and idcocinero = 1;
 			"<th class=\"text-center\"><span>#</span></th>".
 			"<th class=\"text-center\"><span>Nombre de Comida</span></th>".
 			"<th class=\"text-center\"><span>Fecha</span></th>".
-			"<th class=\"text-center\"><span>Precio</span></th>".
+				"<th class=\"text-center\"><span>Precio</span></th>".
 			"<th class=\"text-center\"><span>Cupos vendidos</span></th>".
 			"<th class=\"text-center\"><span>Cant mínima comensales</span></th>".
 			"<th class=\"text-center\"><span>Cant máxima comensales</span></th>".
@@ -73,6 +73,8 @@ where e.idcomida = c.idcomida and idcocinero = 1;
 			$cantCom = stripslashes($row['cantcomensales']);
 			$cantmin = stripslashes($row['cantminpersonas']);
 			$cantmax = stripslashes($row['cantmaxpersonas']);
+			$idrol = stripcslashes($row['idrol']);
+			$_SESSION['idrol'] = $idrol;
 			$out .= "<tr><td class=\"text-center\">". $contador ."</td>"
 			."<td class=\"text-center\"><a href=\"detalleEvento.php?idevento=" . $idevento ."\">". $nombreComida ."</a>".
 			"</td><td class=\"text-center\">" . $fecha ."</td><td class=\"text-center\">".$precio.
