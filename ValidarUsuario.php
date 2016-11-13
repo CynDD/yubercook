@@ -28,22 +28,18 @@
 		$_SESSION["idusuario"] = $idusuario;
      $_SESSION["statuscol"] = $statuscol;
 
-     if ($idrol==1 && $idrol==2){
-
-       header('Location:home');
-     }else if($idrol ==1){
-
+      if($idrol ==1){
         header('Location: homeCocinero.php?');
       }else if($idrol ==2){
         header('Location: homeComensal.php?');
       }else {
-         echo "error de rol";
+        
+		 $statuscol="error";
+		  echo "le erro a la contraseña o al mail";
+		header('Location: index.php?');
       }
 
-    }else{
-      $statuscol="error";
-		  echo "le erro a la contraseña o al mail";
-      header('Location: index.php?');
+   
 
 
         //header('Location: Login.php?MSG=Usuario y/o contrase�a inv�lidos.');
