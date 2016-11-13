@@ -44,7 +44,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 }
 </style>
 </head>
-<body>
+<body onload="obtainGeolocation()">
 
   <header id="mu-header">
     <?php include 'menu_Comensal.php';?>
@@ -54,7 +54,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
       <?php include 'slider.php';?>
   </section>
   <!-- End slider  -->
-
+<br>
+<br>
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
 
@@ -80,7 +81,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   }
 //$filterFoodName = "<br/><label>Buscar por nombre de comida: </label><input type=\"text\" id=\"filterFoodName\" onkeyup=\"buscarPorNombreComida()\" placeholder=\"Buscar...\">";
 //echo $filterFoodName;
-$filterTable = "<br/><div class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
+$filterTable = "<div class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
 echo $filterTable;
 
 // $out = "<h2 align=\"center\">Comidas cerca de ti</h2><br/><div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr>".
@@ -101,22 +102,24 @@ $out = "<div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class
 echo $out;
 $out="";
       $contador = 0;
+      $puntos = array();
   foreach ($rows as $row) {
     $contador = $contador + 1;
     $idevento = stripslashes($row['idevento']);
     $nombreComida  = stripslashes($row['nombreComida']);
     $fecha  = stripslashes($row['fecha']);
-	$precio  = stripslashes($row['precio']);
-  $cantmax = stripslashes($row['cantmaxpersonas']);
-	$cantCom = stripslashes($row['cantcomensales']);
-  if (intval($cantmax) >= intval($cantCom)){
-    $cupos = intval($cantmax) - intval($cantCom);
-  } else {
-    $cupos = "error";
-  }
-	$latitud = $row['latitud'];
-  $longitud = $row['longitud'];
-    $out .= "<tr><td class=\"text-center\">". $contador ."</td>"
+	  $precio  = stripslashes($row['precio']);
+    $cantmax = stripslashes($row['cantmaxpersonas']);
+	   $cantCom = stripslashes($row['cantcomensales']);
+     if (intval($cantmax) >= intval($cantCom)){
+       $cupos = intval($cantmax) - intval($cantCom);
+     } else {
+       $cupos = "error";
+     }
+	    $latitud = $row['latitud'];
+      $longitud = $row['longitud'];
+      $puntos= array('latitud' => $latitud, 'longitud' => $longitud, 'titulo' => $nombreComida);
+  $out .= "<tr><td class=\"text-center\">". $contador ."</td>"
     ."<td class=\"text-center\"><a href=\"detalleEvento.php?idevento=" . $idevento ."\">". $nombreComida ."</a>".
     "</td><td class=\"text-center\">" . $fecha ."</td><td class=\"text-center\">".$precio.
     "</td><td class=\"text-center\">".$cupos."</td></tr>";
@@ -128,104 +131,85 @@ $out="";
 
 <?php include 'scripts.php'; ?>
 <script type="text/javascript">
-//  var latitudU = position.coords.latitude;
-//  var longitudU = position.coords.longitude;
+  //var latitudU = position.coords.latitude;
+  //var longitudU = position.coords.longitude;
 </script>
 <?php
-  //$_SESSION['latitudUser'] = "<script>document.write(latitudU)</script>";
-//  $_SESSION['longitudUser'] = "<script>document.write(longitudU)</script>";
+  $_SESSION['latitudUser'] = "<script>document.write(latitudU)</script>";
+  $_SESSION['longitudUser'] = "<script>document.write(longitudU)</script>";
 ?>
-<div class="form-group">
- <!-- <section id="mu-map">
-   <label class="control-label col-md-3" style="color: white">Eventos cerca de ti:</label> -->
+<!-- <div class="form-group"> -->
+ <section id="mu-map">
+   <label class="control-label col-md-3" style="color: white">Eventos cerca de ti:</label>
    <!-- <div id="map"></div> -->
    <div id="map-canvas"></div>
    <!-- <iframe id="mapaDeEventos" src="mapaDeEventos.html" width="100%" height="100%" frameborder="0"allowfullscreen></iframe> -->
- <!-- </section> -->
-</div>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXZDnKa1eao5nyJ6bXzawkYETLw_SqKY&signed_in=true&callback=initMap&sensor=true"
-    async defer></script> -->
-<script type="text/javascript">
-// var myLatLng;
-// 	function obtenerEventosMapa(){
-// 		var myLatLng = {lat: position.coords.latitude, lng: position.coords.longitude};
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//         zoom: 4,
-//         center: myLatLng
-//       });
-//       var markers =  '<?php json_encode($rows); ?>;'
-//       for (var i = 0; i < markers.length; i++) {
-//         var data = markers[i];
-//         latLng = new google.maps.LatLng(data.latitud, data.longitud);
-//         var marker = new google.maps.Marker({
-//           position: latLng,
-//           map: map,
-//           title: data.nombreComida
-//         });
-//       }
-// 	  }
-//
+ </section>
+<!-- </div> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXZDnKa1eao5nyJ6bXzawkYETLw_SqKY&signed_in=true&callback=initMap"
+    async defer></script>
+    <script>
+    $(document).ready(function(){
+      lat = "<?php echo $puntos['latitud']; ?>" ;
+      lng = "<?php echo $puntos['longitud']; ?>" ;
+      titulo = "<?php echo $puntos['titulo']; ?>" ;
+      var map;
+      function initialize() {
 /*
-var map;
-var pos;
-function initialize() {
-    var mapOptions = {
-        zoom: 6,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-    // Try HTML5 geolocation
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            pos = new google.maps.LatLng(position.coords.latitude,
-            position.coords.longitude);
-
-            map.setCenter(pos);
-        }, function () {
-            handleNoGeolocation(true);
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleNoGeolocation(false);
-    }
-
-    function handleNoGeolocation(errorFlag) {
-        if (errorFlag) {
-            var content = 'Error: The Geolocation service failed.';
-        } else {
-            var content = 'Error: Your browser doesn\'t support geolocation.';
+        var myLatlng = new google.maps.LatLng(lat,lng);
+        var mapOptions = {
+          zoom: 7,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-
-        var options = {
-            map: map,
-            position: new google.maps.LatLng(-29.3456, 151.4346),
-            content: content
-        };
-        var infowindow = new google.maps.InfoWindow(options);
-        map.setCenter(options.position);
-    }
-
-    var marker = new google.maps.Marker({
-        position: pos,
-        title: 'Position',
-        map: map,
-        draggable: true,
-        visible: true
+        map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          draggable:true,
+          animation: google.maps.Animation.DROP,
+          web:"Localización geográfica!",
+          icon: "marker.png"
+        });
+        google.maps.event.addListener(marker, 'dragend', function(event) {
+          var myLatLng = event.latLng;
+          lat = myLatLng.lat();
+          lng = myLatLng.lng();
+          document.getElementById('info').innerHTML = [
+          lat,
+          lng
+          ].join(', ');
+        });
+        marker.setMap(map);
+      }
+      //google.maps.event.addDomListener(window, 'load', initialize);
+      */
     });
+</script>
 
-    updateMarkerPosition(pos);
-    geocodePosition(pos);
-    google.maps.event.addListener(marker, 'drag', function () {
+<script type="text/javascript">
+  function cargarPunto(){
+  //  var lat = document.getElementById('latitud').value;
+  //  var lon = document.getElementById('longitud').value;
+    //window.frames["mapaReferencia"].contentWindow.geocodeLatLng(lat,lon);
+  }
 
-        updateMarkerPosition(marker.getPosition());
+  function obtainGeolocation(){
+    //obtener la posición actual y llamar a la función  "localitation" cuando tiene éxito
+    window.navigator.geolocation.getCurrentPosition(localitation);
+  }
+  function localitation(geo){
+    // En consola nos devuelve el Geoposition object con los datos nuestros
+    console.log(geo);
+  }
+  //llamando la funcion inicial para ver trabajar la API
+  obtainGeolocation();
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
     });
-    $('#button').click(function () {
-        marker.setVisible(true);
-    });
-
-}
-*/
+  }
 </script>
 <script>
 $(document).ready(function(){

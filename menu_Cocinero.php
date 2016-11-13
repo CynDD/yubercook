@@ -19,7 +19,7 @@
                 <li><a href="#mu-about-us">Nosotros</a></li>
                 <li><a href="#mu-restaurant-menu">Menú</a></li>
 				        <li><a href="eventosDelCocinero.php#tablaEventoCocinero">Mis eventos</a></li>
-                <li><a href="contact.php">Contacto</a></li>
+                <li><a href="contactCocinero.php#idConctacCocinero">Contacto</a></li>
                 <li><a href="logout.php"><b>Salir</b></a></li>
 
 
