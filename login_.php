@@ -85,7 +85,6 @@
     </div>
 	<div class="form-group">
         <div class="col-md-offset-2 col-md-9" align="right">
-			<!--<input type="reset" class="btn btn-default" value="Limpiar">-->
 			<button type="submit" class="mu-readmore-btn">Iniciar Sesión</button>
             
             
