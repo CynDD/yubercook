@@ -33,9 +33,9 @@
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$15.85</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Inglés</a></h4>
+                                                            <span class="mu-menu-price">$120-$150</span>
+                                                            <p>El mejor desayuno inglés del universo.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -47,9 +47,9 @@
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$11.95</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Chino</a></h4>
+                                                            <span class="mu-menu-price">$100-$140</span>
+                                                            <p>Un desayuno con estilo.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -57,13 +57,13 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-1.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-3.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$15.85</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Indú</a></h4>
+                                                            <span class="mu-menu-price">$80-$110</span>
+                                                            <p>Un desayuno muy rico, con variedad de verduras.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -77,13 +77,13 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-1.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-4.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$15.85</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Alemán</a></h4>
+                                                            <span class="mu-menu-price">$130-$160</span>
+                                                            <p>Desayuna al estilo Alemán.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -91,13 +91,13 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-2.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-5.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$11.95</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Brasilero</a></h4>
+                                                            <span class="mu-menu-price">$100-$160</span>
+                                                            <p>Un desayuno con mucho color y sabor, al mejor estilo brasilero.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -105,13 +105,13 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-1.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-6.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
-                                                            <span class="mu-menu-price">$15.85</span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                            <h4 class="media-heading"><a href="#">Desayuno Uruguayo</a></h4>
+                                                            <span class="mu-menu-price">$100-$140</span>
+                                                            <p>Rico desayuno, a la tradición gaucha.</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -131,7 +131,7 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-3.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-7.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
@@ -145,7 +145,7 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-4.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-8.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">
@@ -159,7 +159,7 @@
                                                     <div class="media">
                                                         <div class="media-left">
                                                             <a href="#">
-                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-3.jpg" alt="img">
+                                                                <img class="media-object" src="theme/basic/assets/img/menu/item-9.jpg" alt="img">
                                                             </a>
                                                         </div>
                                                         <div class="media-body">

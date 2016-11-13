@@ -89,12 +89,6 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 </section>
 <!-- End Chef Section -->
 
-<!-- Start Latest News -->
-<section id="mu-latest-news">
-    <?php include 'latest-news.php';?>
-</section>
-<!-- End Latest News -->
-
 <!-- Start Contact section -->
 <!--<section id="mu-contact">
 // include 'contact.php';?>
