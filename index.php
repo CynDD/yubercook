@@ -51,6 +51,10 @@
           <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
           <strong>Atención!</strong> Debe ingresar su contraseña.
         </div>
+        <!-- <div id = "inputPasswordWrong" class = "col-md-6 alert alert-warning" role="alert" hidden = "true">
+          <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+          <strong>Atención!</strong> Usuario y/o contraseña incorrectos.
+        </div> -->
       </div>
     </br>
     </br>

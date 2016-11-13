@@ -21,7 +21,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 </head>
 <body onload="cargarPunto()">
 
-  
+
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
 
@@ -29,7 +29,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idevento = $_GET["idevento"];
 
 
-  $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas, 
+  $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas,
 				e.aptoCeliaco, e.fecha, c.idcomida, u.idrol
 				FROM evento e
 					inner join comida c on c.idcomida = e.idcomida
@@ -59,12 +59,12 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 	   <?php if ($idrol == 2){
 		   include 'menu_Comensal.php';
 	   } else if ($idrol == 1){
-			include 'menu_Cocinero.php';   
+			include 'menu_Cocinero.php';
 	   } else {
 		   echo "Error en el id de rol.";
-	   }?>	   
+	   }?>
   </header>
-  
+
 
 <section id="mu-registro">
   <div id="formulario" style = "padding-left:15px";>
@@ -150,11 +150,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 				</section>
 			</div>
 		<!-- End Map section -->
-		      
+
 		<div class="form-group">
 			<button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
 		</div>
-		
+
         <br>
 
         </form>
