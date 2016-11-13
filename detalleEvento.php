@@ -1,10 +1,8 @@
 <?php
 session_start();
-
 if(!isset($_SESSION["statuscol"]) || $_SESSION["statuscol"]==null || $_SESSION["statuscol"]=="error" || $_SESSION["statuscol"]=="logout"){
 print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,11 +22,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
   <?php
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
-
   include'conexion.php';
   $idevento = $_GET["idevento"];
-
-
   $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas,
 				e.aptoCeliaco, e.fecha, c.idcomida, u.idrol
 				FROM evento e
@@ -39,7 +34,6 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   //echo $sqlCont;
   $resultCont = mysql_query($sqlCont,$conex);
   $reg = mysql_fetch_array($resultCont);
-
 	$idusuario=$_SESSION["idusuario"]; //Para que se almacene en idusuario el id del usuario que este logueado
   //$idusuario = "  $reg[idusuario]";
 	$nombre = "  $reg[nombreComida]";
@@ -56,9 +50,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idrol="$reg[idrol]";
 ?>
 <header id="mu-header">
-	   <?php if ($idrol == 2){
+	   <?php if ($idrol == 1){
 		   include 'menu_Comensal.php';
-	   } else if ($idrol == 1){
+	   } else if ($idrol == 2){
 			include 'menu_Cocinero.php';
 	   } else {
 		   echo "Error en el id de rol.";
@@ -151,12 +145,15 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 			</div>
 		<!-- End Map section -->
 
-		<div class="form-group">
-			<button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
-		</div>
-
+    <?php if($idrol == 1): ?>
+      <br>
+      <div class="pull-right">
+      <div class="form-group">
+        <button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
+      </div>
+    </div>
+    <?php endif;?>
         <br>
-
         </form>
       </div>
     </div>
