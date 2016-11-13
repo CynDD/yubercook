@@ -80,7 +80,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   }
 //$filterFoodName = "<br/><label>Buscar por nombre de comida: </label><input type=\"text\" id=\"filterFoodName\" onkeyup=\"buscarPorNombreComida()\" placeholder=\"Buscar...\">";
 //echo $filterFoodName;
-$filterTable = "<br/><br/><div class=\"panel panel-primary filterable\"><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filter</button></div></div>";
+$filterTable = "<br/><div class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
 echo $filterTable;
 
 // $out = "<h2 align=\"center\">Comidas cerca de ti</h2><br/><div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr>".
@@ -91,11 +91,11 @@ echo $filterTable;
 //     "<th class=\"text-center\"><span>Cupos disponibles</span></th>".
 // 		"</tr></thead><tbody>";
 $out = "<div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr class=\"filters\">".
-        "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"#\" disabled></th>".
-        "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Nombre de comida\" disabled></th>".
-		"<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Fecha\" disabled></th>".
-		"<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Precio\" disabled></th>".
-    "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Cupos disponibles\" disabled></th>".
+        "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"#\" disabled></th>".
+        "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Nombre de comida\" disabled></th>".
+		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Fecha\" disabled></th>".
+		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Precio\" disabled></th>".
+    "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Cupos disponibles\" disabled></th>".
 		"</tr></thead><tbody>";
 
 echo $out;
