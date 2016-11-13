@@ -226,7 +226,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
         <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                   <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-     <button type="submit" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
+           <button type="button" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
                   <!--<button type="button" onclick="return validarEventoCocinero()" class="mu-readmore-btn">Crear comida</button>-->
       </div>
         </form>

@@ -1,16 +1,25 @@
 function validarEventoCocinero(){
-//	debugger;
+	debugger;
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
 			$('#nombreAlertComida').show();
 			nombreComida.focus();
 		}
-		if (ok && imagenComida.checked == false){
+
+		var archivo=document.getElementById('imagenComida').value;
+    var ext=archivo.substr(-4, 4);
+		if(ok || ext=="" || ext=='.jpg'){
+      ok = false;
+			$('#imagenAlertComida').show();
+			imagenComida.focus();
+
+		}
+	/*	if (ok && imagenComida.checked == false){
 			ok = false;
 			$('#imagenAlertComida').show();
 			imagenComida.focus();
-		}
+		}*/
     precioComida = document.getElementById("inputPrecio").value;
 		if(ok && precioComida == ""){
 			ok=false;
@@ -56,7 +65,7 @@ function validarEventoCocinero(){
       Si.focus();
     }
 		if(ok){
-			document.forms["formCocinero"].submit();
+		    	document.forms["formCocinero"].submit();
 	  	}
 			else{console.log("error");}
 	}
