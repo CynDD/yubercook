@@ -1,12 +1,15 @@
 function validarEventoCocinero(){
-//	debugger;
+	debugger;
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
 			$('#nombreAlertComida').show();
 			nombreComida.focus();
 		}
-		if (ok && imagenComida.checked == false){
+		var imagen = document.getElementById('imagenComida').value;
+		//if (ok && imagenComida.checked == false){
+		var extension = imagen.substring(imagen.lastIndexOf('.') + 1).toLowerCase();
+		if (ok && imagen == "" || (extension != "jpg" && extension != "png" && extension != "jpeg" && extension != "gif")){
 			ok = false;
 			$('#imagenAlertComida').show();
 			imagenComida.focus();
