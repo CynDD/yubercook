@@ -150,13 +150,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 				</section>
 			</div>
 		<!-- End Map section -->
-		      <?php if($idrol == 2):?>
+		      
 		<div class="form-group">
 			<button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
 		</div>
-		<?php else:?>
-      
-		<?php endif;?>
+		
         <br>
 
         </form>
