@@ -78,9 +78,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   while ($row = mysql_fetch_array($resultCont)){
     $rows[] = $row;
   }
-$filterFoodName = "<br/><label>Buscar por nombre de comida: </label><input type=\"text\" id=\"filterFoodName\" onkeyup=\"buscarPorNombreComida()\" placeholder=\"Buscar...\">";
+//$filterFoodName = "<br/><label>Buscar por nombre de comida: </label><input type=\"text\" id=\"filterFoodName\" onkeyup=\"buscarPorNombreComida()\" placeholder=\"Buscar...\">";
 //echo $filterFoodName;
-$filterTable = "<div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros</button></div></div>";
+$filterTable = "<br/><div class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
 echo $filterTable;
 
 // $out = "<h2 align=\"center\">Comidas cerca de ti</h2><br/><div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr>".
@@ -90,12 +90,12 @@ echo $filterTable;
 // 		"<th class=\"text-center\"><span>Precio</span></th>".
 //     "<th class=\"text-center\"><span>Cupos disponibles</span></th>".
 // 		"</tr></thead><tbody>";
-$out = "<h2 align=\"center\">Comidas cerca de ti</h2><br/><div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr class=\"filters\">".
-        "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"#\" disabled></th>".
-        "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Nombre de comida\" disabled></th>".
-		"<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Fecha\" disabled></th>".
-		"<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Precio\" disabled></th>".
-    "<th class=\"text-center\"><input type=\"text\" class=\"form-control\" placeholder=\"Cupos disponibles\" disabled></th>".
+$out = "<div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr class=\"filters\">".
+        "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"#\" disabled></th>".
+        "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Nombre de comida\" disabled></th>".
+		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Fecha\" disabled></th>".
+		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Precio\" disabled></th>".
+    "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Cupos disponibles\" disabled></th>".
 		"</tr></thead><tbody>";
 
 echo $out;
@@ -121,7 +121,7 @@ $out="";
     "</td><td class=\"text-center\">" . $fecha ."</td><td class=\"text-center\">".$precio.
     "</td><td class=\"text-center\">".$cupos."</td></tr>";
     }
-  $out .= "</tbody></table></div>";
+  $out .= "</tbody></table></div></div></div>";
    echo $out;
 ?>
 
@@ -233,6 +233,7 @@ $(document).ready(function(){
         var $panel = $(this).parents('.filterable'),
         $filters = $panel.find('.filters input'),
         $tbody = $panel.find('.table tbody');
+
         if ($filters.prop('disabled') == true) {
             $filters.prop('disabled', false);
             $filters.first().focus();
@@ -240,6 +241,7 @@ $(document).ready(function(){
             $filters.val('').prop('disabled', true);
             $tbody.find('.no-result').remove();
             $tbody.find('tr').show();
+
         }
     });
 

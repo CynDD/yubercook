@@ -24,6 +24,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   // PROCESO PARA VER EL DETALLE DE LOS EVENTOS
   include'conexion.php';
   $idevento = $_GET["idevento"];
+
   $sqlCont = "SELECT c.nombreComida, c.descripcion,  u.idusuario, c.imagen, ub.latitud,ub.longitud, e.precio, e.cantminpersonas,e.cantmaxpersonas,
 				e.aptoCeliaco, e.fecha, c.idcomida, u.idrol
 				FROM evento e

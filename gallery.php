@@ -15,7 +15,7 @@
                             <li class="filter active" data-filter="all">Todos</li>
                             <li class="filter" data-filter=".food">Comidas</li>
                             <li class="filter" data-filter=".drink">Bebidas</li>
-                            <li class="filter" data-filter=".restaurant">Restaurantes</li>
+                            <li class="filter" data-filter=".restaurant">Casas de los cocineros</li>
                             <li class="filter" data-filter=".dinner">Cena</li>
                             <li class="filter" data-filter=".dessert">Postres</li>
                         </ul>
