@@ -6,19 +6,13 @@ function validarEventoCocinero(){
 			$('#nombreAlertComida').show();
 			nombreComida.focus();
 		}
-<<<<<<< HEAD
 
-		var archivo=document.getElementById('imagenComida').value;
-    var ext=archivo.substr(-4, 4);
-		if(ok || ext=="" || ext=='.jpg'){
-      ok = false;
-=======
 		var imagen = document.getElementById('imagenComida').value;
 		//if (ok && imagenComida.checked == false){
 		var extension = imagen.substring(imagen.lastIndexOf('.') + 1).toLowerCase();
 		if (ok && imagen == "" || (extension != "jpg" && extension != "png" && extension != "jpeg" && extension != "gif")){
 			ok = false;
->>>>>>> 63ddf75a2365453c16553145a7815b34ad126f7f
+
 			$('#imagenAlertComida').show();
 			imagenComida.focus();
 
