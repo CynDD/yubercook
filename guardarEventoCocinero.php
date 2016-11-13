@@ -127,7 +127,7 @@
             '".date("Y-m-d H:i:s",strtotime(str_replace('/','-',$fechafin)))."',".$inputPrecio.",".$regUbi['idubicacion'].",".$cantMaxPersonas.",".$cantMinPersonas.",'".$aptoCeliacos."',0)";
 			echo $sqlinsevento;
 			$result = mysql_query($sqlinsevento,$conex);
-
+      
 			header('Location: homeCocinero.php?');
     ?>
 

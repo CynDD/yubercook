@@ -26,7 +26,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 <body>
 
   <header id="mu-header">
-    <?php include 'menu_Cocinero.php';?>
+    <?php include 'menu_Evento.php';?>
   </header>
   <!-- Start slider  -->
   <section id="mu-slider">
