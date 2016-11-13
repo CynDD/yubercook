@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["statuscol"]) || $_SESSION["statuscol"]==null || $_SESSION["statuscol"]=="error" || $_SESSION["statuscol"]=="logout"){
+print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -13,6 +21,7 @@
   <header id="mu-header">
     <?php include 'menu.php';?>
   </header>
+
   <!-- Start slider  -->
   <section id="mu-slider">
       <?php include 'slider.php';?>

@@ -18,7 +18,6 @@
 				<li><a href="eventosDelComensal.php#latabla" target="_blank">Eventos comprados</a></li>
                 <li><a href="comidasCerca.php">Comidas cerca de ti</a></li>
                 <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>
-                <li><a href="">Cocineros</a></li>
                 <li><a href="contact.php">Contacto</a></li>
                 <li><a href="logout.php"><b>Salir</b></a></li>
             </ul>
