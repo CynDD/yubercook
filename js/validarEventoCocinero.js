@@ -1,5 +1,5 @@
 function validarEventoCocinero(){
-	debugger;
+	//debugger;
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
