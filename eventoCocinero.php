@@ -34,7 +34,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   </section>
   <!-- End slider  -->
 
-   <section id="mu-registro" name="mu-registro">>
+   <section id="mu-registro" name="mu-registro">
   <div id="formulario" name="formulario" style = "padding-left:15px";>
 
     <form id="formCocinero" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#" onsubmit="javascript:obtenerParametros()">
@@ -220,14 +220,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
     <br>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-9" align="right">
-        <!-- <button type="reset" class="mu-reset-btn">Limpiar datos</button>
-        <button type="submit" class="mu-send-btn" onsubmit="return validarEventoCocinero()">Crear comida</button> -->
 
-        <!--<input type="button" class="btn btn-success"    value="Crear comida"  onclick="return validarEventoCocinero();" />-->
         <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                   <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-           <button type="button" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
-                  <!--<button type="button" onclick="return validarEventoCocinero()" class="mu-readmore-btn">Crear comida</button>-->
+           <button type="submit" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
+                  
       </div>
         </form>
       </div>
