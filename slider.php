@@ -1,3 +1,4 @@
+
 <div class="mu-slider-area">
     <!-- Top slider -->
     <div class="mu-top-slider">
@@ -9,7 +10,7 @@
                 <span class="mu-slider-small-title">Bienvenido a yubercook</span>
               </br>
                 <p>Conectate con gente interesante para planificar o asistir a eventos para compartir una comida juntos</p>
-                <a href="#" class="mu-readmore-btn">MAS INFORMACION</a>
+               
             </div>
             <!-- / Top slider content -->
         </div>
@@ -22,7 +23,7 @@
                 <span class="mu-slider-small-title">La mejor</span>
                 <h2 class="mu-slider-title">COMIDA SALUDABLE</h2>
                 <p>Para vos que te gusta cuidar tu silueta..</p>
-                <a href="#" class="mu-readmore-btn">MAS INFORMACION</a>
+                
             </div>
             <!-- / Top slider content -->
         </div>
@@ -35,7 +36,8 @@
                 <span class="mu-slider-small-title">Deliciosas</span>
                 <h2 class="mu-slider-title">ESPECIALIDADES</h2>
                 <p>Te presentamos los mejores platos de nuestros cocineros elaborados con los mejores ingredientes</p>
-                <a href="#" class="mu-readmore-btn">MAS INFORMACION</a>
+                
+				
             </div>
             <!-- / Top slider content -->
         </div>
