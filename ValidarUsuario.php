@@ -24,8 +24,9 @@
       $statuscol="login";
       $_SESSION["fullname"]=$nombre ." ". $apellido;
 
-	  	$_SESSION["idusuario"] = $idusuario;
-     $_SESSION["statuscol"] = $statuscol;
+	  $_SESSION["idusuario"] = $idusuario;
+	  $_SESSION["idrol"] = $idrol;
+		$_SESSION["statuscol"] = $statuscol;
 
       if($idrol ==1){
         header('Location: homeCocinero.php?');

@@ -1,5 +1,5 @@
 function validarEventoCocinero(){
-	debugger;
+	//debugger;
 	ok = true;
 		if(ok && nombreComida.value==""){
 			ok=false;
@@ -17,11 +17,7 @@ function validarEventoCocinero(){
 			imagenComida.focus();
 
 		}
-	/*	if (ok && imagenComida.checked == false){
-			ok = false;
-			$('#imagenAlertComida').show();
-			imagenComida.focus();
-		}*/
+
     precioComida = document.getElementById("inputPrecio").value;
 		if(ok && precioComida == ""){
 			ok=false;
@@ -68,6 +64,7 @@ function validarEventoCocinero(){
     }
 		if(ok){
 		    	document.forms["formCocinero"].submit();
+
 	  	}
 			else{console.log("error");}
 	}
