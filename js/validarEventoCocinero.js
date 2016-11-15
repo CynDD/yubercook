@@ -68,6 +68,7 @@ function validarEventoCocinero(){
     }
 		if(ok){
 		    	document.forms["formCocinero"].submit();
+				  
 	  	}
 			else{console.log("error");}
 	}

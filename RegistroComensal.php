@@ -183,7 +183,7 @@
 <div class="form-group">
   <div class="col-md-offset-2 col-md-9" align="right">
     <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
-    <<button type="button" class="mu-readmore-btn" onclick="return validarRegistroComensal()">Enviar</button>
+    <button type="button" class="mu-readmore-btn" onclick="return validarRegistroComensal()">Enviar</button>
 
   </div>
 </div>

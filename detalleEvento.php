@@ -16,6 +16,11 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   //include_once 'php/functions.php';
   include 'styles.php';
   ?>
+  <!-- Start slider  -->
+  <section id="mu-slider">
+      <?php include 'slider.php';?>
+  </section>
+  <!-- End slider  -->
 </head>
 <body onload="cargarPunto()">
 
@@ -51,10 +56,12 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $idrol="$reg[idrol]";
 ?>
 <header id="mu-header">
-	   <?php if ($idrol == 1){
+	   <?php if ($idrol == 2){
 		   include 'menu_Comensal.php';
-	   } else if ($idrol == 2){
+         $_SESSION["id"]=true;
+	   } else if ($idrol == 1){
 			include 'menu_Cocinero.php';
+        $_SESSION["id"]=false;
 	   } else {
 		   echo "Error en el id de rol.";
 	   }?>
@@ -146,14 +153,14 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 			</div>
 		<!-- End Map section -->
 
-    <?php if($idrol == 1): ?>
+
       <br>
       <div class="pull-right">
       <div class="form-group">
-        <button type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
+        <button id ="comprar" type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
       </div>
     </div>
-    <?php endif;?>
+
         <br>
         </form>
       </div>
@@ -169,6 +176,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 		window.frames["mapaReferencia"].contentWindow.geocodeLatLng(lat,lon);
 	}
 </script>
+
+
+
 
 <?php include 'scripts.php'; ?>
 </body>
