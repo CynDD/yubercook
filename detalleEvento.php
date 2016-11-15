@@ -41,8 +41,8 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $resultCont = mysql_query($sqlCont,$conex);
   $reg = mysql_fetch_array($resultCont);
 	$idusuario=$_SESSION["idusuario"]; //Para que se almacene en idusuario el id del usuario que este logueado
-  //$idusuario = "  $reg[idusuario]";
-	$nombre = "  $reg[nombreComida]";
+    $idrol=$_SESSION["idrol"];
+  $nombre = "  $reg[nombreComida]";
   $descripcion  = "$reg[descripcion]";
   $imagen  = "$reg[imagen]";
   $precio = " $reg[precio]";
@@ -53,7 +53,6 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   $latitud="$reg[latitud]";
   $longitud="$reg[longitud]";
   $idcomida="$reg[idcomida]";
-  $idrol="$reg[idrol]";
 ?>
 <header id="mu-header">
 	   <?php if ($idrol == 2){
@@ -155,12 +154,12 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
 
 
       <br>
-      <div class="pull-right">
-      <div class="form-group">
-        <button id ="comprar" type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>
-      </div>
-    </div>
-
+	  <?php if($idrol == 2){ echo'<div class="pull-right">'.
+			  '<div class="form-group">'.
+				'<button id ="comprar" type="button" class="mu-readmore-btn" onclick="submit()">Comprar</button>'.
+			  '</div>'.
+	  '</div>';}
+		?>
         <br>
         </form>
       </div>
