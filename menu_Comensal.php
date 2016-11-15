@@ -16,8 +16,9 @@
                 <li><a href="#"><?php echo "<b>Bienvenido " . $_SESSION["fullname"] . "!</b>"; ?></a></li>
                 <li><a href="about-us.php">Nosotros</a></li>
 				<li><a href="eventosDelComensal.php#latabla" target="_blank">Eventos comprados</a></li>
-                <li><a href="comidasCerca.php">Comidas cerca de ti</a></li>
-                <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>
+                <li><a href="comidasCerca.php#eventos">Ver Eventos</a></li>
+              <!--  <li><a href="tablaDeEvento.php#latabla" target="_blank">Ver Eventos</a></li>-->
+
                 <li><a href="logout.php"><b>Salir</b></a></li>
             </ul>
         </div><!--/.nav-collapse -->

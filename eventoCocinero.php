@@ -142,7 +142,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <div class="form-group">
             <div class="form-group">
               <label class="control-label col-md-3" style="color: white" for="inicioComida">Inicio:</label></br>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class='input-group date' id='inicioComidaCalendar'  >
                   <input type='text' class="form-control" name='inicioComida' id='inicioComida'/>
                   <span class="input-group-addon">
@@ -224,7 +224,7 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
         <input id="cancel" name="cancel" type="button" value="Cancelar" class="mu-browsmore-btn" onclick="location.href='index.php';">
                   <input id="reset" name="reset" type="reset" value="Limpiar datos" class="mu-browsmore-btn">
            <button type="submit" class="mu-readmore-btn" onclick="return validarEventoCocinero()">Crear comida</button>
-                  
+
       </div>
         </form>
       </div>

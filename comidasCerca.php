@@ -67,9 +67,9 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
  SELECT ce.idevento, e.fecha, c.nombreComida, e.precio, e.cantcomensales, u.latitud, u.longitud
  FROM comensalevento ce, evento e, comida c, ubicacion u
  WHERE ce.idevento = e.idevento and e.idcomida = c.idcomida and e.idubicacion = u.idubicacion and ce.idusuario = 1;*/
-   $sqlCont = "SELECT ce.idevento, e.fecha, c.nombreComida, e.precio, e.cantcomensales, e.cantmaxpersonas, u.latitud, u.longitud
-                 FROM comensalevento ce, evento e, comida c, ubicacion u
-               where ce.idevento = e.idevento and e.idcomida = c.idcomida and e.idubicacion = u.idubicacion";
+   $sqlCont =  "SELECT e.idevento, e.idcocinero, c.nombreComida ,e.fecha, e.precio, u.nombre,u.apellido, e.cantcomensales, e.cantminpersonas, e.cantmaxpersonas
+			FROM evento e inner join comida c inner join usuario u
+			where e.idcomida=c.idcomida and e.idcocinero=u.idusuario;";
 
 
   $resultCont = mysql_query($sqlCont,$conex);
@@ -81,20 +81,15 @@ print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>
   }
 //$filterFoodName = "<br/><label>Buscar por nombre de comida: </label><input type=\"text\" id=\"filterFoodName\" onkeyup=\"buscarPorNombreComida()\" placeholder=\"Buscar...\">";
 //echo $filterFoodName;
-$filterTable = "<div class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\">Comidas</h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
+$filterTable =  " <h2 align=\"center\" >Eventos disponibles</h2><br/><div id=\"eventos\" class=\"panel panel-primary filterable\"><br/><div class=\"panel-heading\"><h3 class=\"panel-title\"></br> </h3><div class=\"pull-right\"><button class=\"btn btn-default btn-xs btn-filter\"><span class=\"glyphicon glyphicon-filter\"></span> Filtros </button></div></div>";
 echo $filterTable;
 
-// $out = "<h2 align=\"center\">Comidas cerca de ti</h2><br/><div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr>".
-//         "<th class=\"text-center\"><span>#</span></th>".
-//         "<th class=\"text-center\"><span>Nombre de Comida</span></th>".
-// 		"<th class=\"text-center\"><span>Fecha</span></th>".
-// 		"<th class=\"text-center\"><span>Precio</span></th>".
-//     "<th class=\"text-center\"><span>Cupos disponibles</span></th>".
-// 		"</tr></thead><tbody>";
+
 $out = "<div tclass=\"table-responsive\" style=\"overflow-x:auto;\"><table class=\"table\"><thead><tr class=\"filters\">".
         "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"#\" disabled></th>".
         "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Nombre de comida\" disabled></th>".
 		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Fecha\" disabled></th>".
+    "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Nombre cocinero\" disabled></th>".
 		"<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Precio\" disabled></th>".
     "<th class=\"text-center\"><input type=\"text\" class=\"form-control text-center\" placeholder=\"Cupos disponibles\" disabled></th>".
 		"</tr></thead><tbody>";
@@ -106,7 +101,9 @@ $out="";
   foreach ($rows as $row) {
     $contador = $contador + 1;
     $idevento = stripslashes($row['idevento']);
+    $idcocinero = stripslashes($row['idcocinero']);
     $nombreComida  = stripslashes($row['nombreComida']);
+    $nombreCocinero = stripslashes($row['nombre']) . " " . stripslashes($row['apellido']);
     $fecha  = stripslashes($row['fecha']);
 	  $precio  = stripslashes($row['precio']);
     $cantmax = stripslashes($row['cantmaxpersonas']);
@@ -116,12 +113,12 @@ $out="";
      } else {
        $cupos = "error";
      }
-	    $latitud = $row['latitud'];
-      $longitud = $row['longitud'];
-      $puntos= array('latitud' => $latitud, 'longitud' => $longitud, 'titulo' => $nombreComida);
+
+
   $out .= "<tr><td class=\"text-center\">". $contador ."</td>"
     ."<td class=\"text-center\"><a href=\"detalleEvento.php?idevento=" . $idevento ."\">". $nombreComida ."</a>".
-    "</td><td class=\"text-center\">" . $fecha ."</td><td class=\"text-center\">".$precio.
+    "</td><td class=\"text-center\">" . $fecha ."</td><td class=\"text-center\"><a href=\"detalleCocinero.php?idcocinero=".$idcocinero."\">" .$nombreCocinero ."</a>".
+    "</td><td class=\"text-center\">".$precio.
     "</td><td class=\"text-center\">".$cupos."</td></tr>";
     }
   $out .= "</tbody></table></div></div></div>";
@@ -134,10 +131,7 @@ $out="";
   //var latitudU = position.coords.latitude;
   //var longitudU = position.coords.longitude;
 </script>
-<?php
-  $_SESSION['latitudUser'] = "<script>document.write(latitudU)</script>";
-  $_SESSION['longitudUser'] = "<script>document.write(longitudU)</script>";
-?>
+
 <!-- <div class="form-group"> -->
  <section id="mu-map">
    <label class="control-label col-md-3" style="color: white">Eventos cerca de ti:</label>
